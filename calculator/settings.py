@@ -80,9 +80,7 @@ TAGGIT_CASE_INSENSITIVE = True
 
 USE_TZ = True#for time zone related 
 
-ADMIN = [('Vimit', 'vim.python.dj@gmail.com'),('Pihu', 'pihu1212@gmail.com')]
-SERVER_EMAIL = 'django@gmail.com'
-# MANAGERS = (('VIMIT', 'vim.python.dj@gmail.com'),)
+
 
 TEMPLATES = [
     {
