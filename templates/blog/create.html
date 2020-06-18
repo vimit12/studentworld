@@ -1,0 +1,17 @@
+{%extends 'blog/index.html' %}
+
+{%block content%}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'blog-home' %}">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Create</li>
+    </ol>
+</nav>
+
+<form action="" method="POST">
+    {{form.as_p}}
+    {%csrf_token%}
+    <input type="submit" class="btn btn-info" value="Submit Comment">
+</form>
+{%endblock%}

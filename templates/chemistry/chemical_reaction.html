@@ -1,0 +1,337 @@
+{% extends 'chemistry/base.html' %}
+{% load static %}
+
+<title>{% block title%}Chemical Reaction{% endblock %}</title>
+
+{% block link %}
+    
+{% endblock %}
+
+{% block script %}
+{% endblock %}
+
+{% block chemistry_body%}
+
+    <div class="container container-card">
+        <h2 class="display-4" style="font-family: 'Jim Nightshade';font-size: 36px;padding-top: 0.5em;" align="center">What is Chemical Reactions?</h2>
+        <hr>
+        <p >A chemical reaction is a process that leads to the chemical transformation of one set of
+            chemical substances to another. Classically, chemical reactions encompass changes that only involve the
+            positions of electrons in the forming and breaking of chemical bonds between atoms, with no change to the
+            nuclei (no change to the elements present), and can often be described by a chemical equation. Nuclear
+            chemistry is a sub-discipline of chemistry that involves the chemical reactions of unstable and radioactive
+            elements where both electronic and nuclear changes can occur.<br><br>
+
+            The substance (or substances) initially involved in a chemical reaction are called reactants or reagents.
+            Chemical reactions are usually characterized by a chemical change, and they yield one or more products,
+            which usually have properties different from the reactants. Reactions often consist of a sequence of
+            individual sub-steps, the so-called elementary reactions, and the information on the precise course of
+            action is part of the reaction mechanism. Chemical reactions are described with chemical equations, which
+            symbolically present the starting materials, end products, and sometimes intermediate products and reaction
+            conditions.<br><br>
+
+            Chemical reactions happen at a characteristic reaction rate at a given temperature and chemical
+            concentration. Typically, reaction rates increase with increasing temperature because there is more thermal
+            energy available to reach the activation energy necessary for breaking bonds between atoms.<br><br>
+
+            Reactions may proceed in the forward or reverse direction until they go to completion or reach equilibrium.
+            Reactions that proceed in the forward direction to approach equilibrium are often described as spontaneous,
+            requiring no input of free energy to go forward. Non-spontaneous reactions require input of free energy to
+            go forward (examples include charging a battery by applying an external electrical power source, or
+            photosynthesis driven by absorption of electromagnetic radiation in the form of sunlight).<br><br>
+
+            Different chemical reactions are used in combinations during chemical synthesis in order to obtain a desired
+            product. In biochemistry, a consecutive series of chemical reactions (where the product of one reaction is
+            the reactant of the next reaction) form metabolic pathways. These reactions are often catalyzed by protein
+            enzymes. Enzymes increase the rates of biochemical reactions, so that metabolic syntheses and decompositions
+            impossible under ordinary conditions can occur at the temperatures and concentrations present within a
+            cell.<br><br>
+
+            The general concept of a chemical reaction has been extended to reactions between entities smaller than
+            atoms, including nuclear reactions, radioactive decays, and reactions between elementary particles, as
+            described by quantum field theory.</p>
+
+        <hr style="border-color: rgb(12, 12, 12);">
+        <div class="row">
+            <div class="col-4">
+                <div class="list-group" id="list-tab" role="tablist">
+
+                    <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list"
+                        href="#list-elementary" role="tab" aria-controls="home">Elementary Reaction</a>
+
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list"
+                        href="#list-chemical" role="tab" aria-controls="profile">Chemical Reaction</a>
+
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list"
+                        href="#list-comb" role="tab" aria-controls="profile">Combination And Decomposition
+                        Reaction</a>
+
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list"
+                        href="#list-redox" role="tab" aria-controls="profile">Redox Reactions</a>
+
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="tab-content" id="nav-tabContent">
+
+
+                    <div class="tab-pane fade show active" id="list-elementary" role="tabpanel"
+                        aria-labelledby="list-home-list">
+                        <h4 style="font-family: 'Alex Brush';font-size: 26px;">Elementary Reaction</h4>
+                        <hr style="border-color: rgb(12, 12, 12);">
+                        <p>
+                            The elementary reaction is the smallest division into which a chemical reaction can be
+                            decomposed, it
+                            has no intermediate products. Most experimentally observed reactions are built up from many
+                            elementary reactions that occur in parallel or sequentially. The actual sequence of the
+                            individual
+                            elementary reactions is known as reaction mechanism. An elementary reaction involves a few
+                            molecules,
+                            usually one or two, because of the low probability for several molecules to meet at a
+                            certain time.<br>
+                            <div align="">
+                                <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c95109ff45e4abc6113f26ef442cee98dfad3b73"
+                                    alt="">
+                                <p>Dissociation of a molecule AB into fragments A and B.</p>
+                            </div>
+                            For bimolecular reactions, two molecules collide and react with each other. Their merger is
+                            called
+                            chemical synthesis or an addition reaction.
+                            <div align="">
+                                <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a430b00af8bf030be7f697aa5392a5e59b947621"
+                                    alt="">
+                                <p>Another possibility is that only a portion of one molecule is transferred to the
+                                    other molecule.
+                                    This type of reaction occurs, for example, in redox and acid-base reactions. In
+                                    redox reactions,
+                                    the transferred particle is an electron, whereas in acid-base reactions it is a
+                                    proton. This
+                                    type of reaction is also called metathesis.</p>
+                            </div>
+                            <div align="">
+                                <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/7c52399dc17bd8d15c017218a88417daf53dfcd8"
+                                    alt="">
+                                <p>For Example :-</p><br>
+                                <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ebcf421b914c3026008f6a660ac0321ed0836c7c"
+                                    alt="">
+                            </div>
+                        </p>
+                    </div>
+
+
+                    <div class="tab-pane fade" id="list-chemical" role="tabpanel" aria-labelledby="list-profile-list">
+                        <h4 style="font-family: 'Alex Brush';font-size: 26px;">Chemical Reaction</h4>
+                        <hr style="border-color: rgb(12, 12, 12);">
+                        <p>
+                            Most chemical reactions are reversible, that is they can and do run in both directions. The
+                            forward and
+                            reverse reactions are competing with each other and differ in reaction rates. These rates
+                            depend on the
+                            concentration and therefore change with time of the reaction: the reverse rate gradually
+                            increases and
+                            becomes equal to the rate of the forward reaction, establishing the so-called chemical
+                            equilibrium. The
+                            time to reach equilibrium depends on such parameters as temperature, pressure and the
+                            materials
+                            involved, and is determined by the minimum free energy. In equilibrium, the Gibbs free
+                            energy must be
+                            zero. The pressure dependence can be explained with the Le Chatelier's principle. For
+                            example, an
+                            increase in pressure due to decreasing volume causes the reaction to shift to the side with
+                            the fewer
+                            moles of gas.<br>
+
+                            The reaction yield stabilizes at equilibrium, but can be increased by removing the product
+                            from the
+                            reaction mixture or changed by increasing the temperature or pressure. A change in the
+                            concentrations of
+                            the reactants does not affect the equilibrium constant, but does affect the equilibrium
+                            position. </p>
+                    </div>
+
+                    <div class="tab-pane fade" id="list-comb" role="tabpanel" aria-labelledby="list-profile-list">
+                        <h4 style="font-family: 'Alex Brush';font-size: 26px;">Chemical Combination Reation</h4>
+                        <hr style="border-color: rgb(12, 12, 12);">
+                        A combination reaction (also known as a synthesis reaction) is a reaction where two or more
+                        elements or compounds (reactants) combine to form a single compound (product). Such reactions
+                        may be represented by equations of the following form: X + Y → XY. The combination of two or
+                        more elements and form one compound is called combination reaction. | a) Between elements | C +
+                        O<sub>2</sub> → CO<sub>2</sub> | Carbon completely burnt in oxygen yields carbon dioxide |- | b)
+                        Between compounds |
+                        CaO + H<sub>2</sub>O → Ca(OH)<sub>2</sub> | Calcium oxide (lime) combined with water gives
+                        calcium hydroxide (slaked lime) |- | c) Between elements and compounds | 2CO + O<sub>2</sub> → 2CO<sub>2</sub> | Oxygen
+                        combines with carbon monoxide, and carbon dioxide is formed. |}<br><br>
+
+                        There is no specific number of reactants in a combination reaction.
+
+                        Combination reactions are usually exothermic because when the bond forms between the reactants,
+                        heat is released. For example, barium metal and fluorine gas will combine in a highly exothermic
+                        reaction to form the salt barium fluoride:<br><br>
+                        <strong>Ba + F<sub>2</sub> → BaF<sub>2</sub></strong>
+                        <br>
+                        Another example is magnesium oxide combining with carbon dioxide to produce magnesium carbonate.<br>
+                        <strong>MgO + CO<sub>2</sub> → MgCO<sub>3</sub></strong>
+                        <br>
+                        Another example is iron combining with sulfur to produce iron(II) sulfide.<br><br>
+                        <strong>Fe + S → FeS </strong>
+                        <br><br>
+                        When a combination reaction occurs between a metal and a non-metal the product is an ionic
+                        solid.An example could be lithium reacting with sulfur to give lithium sulfide. When magnesium
+                        burns in air, the atoms of the metal combine with the gas oxygen to produce magnesium oxide.
+                        This specific combination reaction produces the bright flame generated by flares.<br><br>
+
+                        Combination reactions can also occur in other situations when the two products do not have the
+                        same ionic charge. In such a situation, different quantities of each reactant must be used. To
+                        denote this in a chemical equation, a coefficient is added to one or more of the reactants so
+                        that the total ionic charge of each reactant is the same. For example, Iron (III) Oxide is
+                        formed by the following equation: <br>
+                        <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/2d061058125fe849ed343aeab5e509564f38e842" alt="">
+
+                        <hr style="border-color: rgb(12, 12, 12);">
+                        <h4 style="font-family: 'Alex Brush';font-size: 26px;">Chemical decomposition Reation</h4>
+                        <hr>
+                        <p>
+                            Chemical decomposition, or chemical breakdown, is the process or effect of simplifying a
+                            single chemical entity (normal molecule, reaction intermediate, etc.) into two or more
+                            fragments. Chemical decomposition is usually regarded and defined as the exact opposite
+                            of chemical synthesis. In short, the chemical reaction in which two or more products are
+                            formed from a single reactant is called a decomposition reaction.<br><br>
+
+                            The details of a decomposition process are not always well defined but some of the process
+                            is understood; much energy is needed to break bonds. Since all decomposition reactions break
+                            apart the bonds holding it together in order to produce into its simpler basic parts, the
+                            reactions would require some form of this energy in varying degrees. Because of this
+                            fundamental rule, it is known that most of these reactions are endothermic although
+                            exceptions do exist.<br><br>
+
+                            The stability of a chemical compound is eventually limited when exposed to extreme
+                            environmental conditions such as heat, radiation, humidity, or the acidity of a solvent.
+                            Because of this chemical decomposition is often an undesired chemical reaction. However
+                            chemical decomposition is being used in a growing number of ways.<br><br>
+
+                            For example this method is employed for several analytical techniques, notably mass
+                            spectrometry, traditional gravimetric analysis, and thermogravimetric analysis. Additionally
+                            decomposition reactions are used today for a number of other reasons in the production of a
+                            wide variety of products. One of these is the explosive breakdown reaction of sodium azide
+                            [(NaN3)<sub>2</sub>] into nitrogen gas (N<sub>2</sub>) and sodium (Na). It is this process
+                            which powers the life-saving airbags present in virtually all of today's automobiles.<br><br>
+
+                            Decomposition reactions can be generally classed into three categories; thermal,
+                            electrolytic, and photolytic decomposition reactions.
+
+                        </p>
+
+                    </div>
+
+                    <div class="tab-pane fade" id="list-redox" role="tabpanel" aria-labelledby="list-profile-list">
+                        <h4 style="font-family: 'Alex Brush';font-size: 26px;">Redox Reaction</h4>
+                        <hr style="border-color: rgb(12, 12, 12);">
+
+                        Redox is a type of chemical reaction in which the oxidation states of atoms are changed. Redox reactions are
+                        characterized by the actual or formal transfer of electrons between chemical species, most often
+                        with one species (the reducing agent) undergoing oxidation (losing electrons) while another
+                        species (the oxidizing agent) undergoes reduction (gains electrons). The chemical species
+                        from which the electron is removed is said to have been oxidized, while the chemical species to
+                        which the electron is added is said to have been reduced. In other words:<br><br>
+                        <li> <strong>Oxidation</strong> is the loss of electrons or an increase in the oxidation state
+                            of an atom, an ion,
+                            or of certain atoms in a molecule.</li>
+                        <li> <strong>Reduction</strong> is the gain of electrons or a decrease in the oxidation state of
+                            an atom, an ion, or of certain atoms in a molecule.</li>
+
+                        <div align="center">
+                            <img style="width:80%;height80%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/NaF.gif/525px-NaF.gif"
+                                alt="">
+                            <p>Sodium and fluorine bonding ionically to form sodium fluoride. Sodium loses its outer
+                                electron to give it a stable electron configuration, and this electron enters the
+                                fluorine atom exothermically. The oppositely charged ions are then attracted to each
+                                other. The sodium is oxidized, and the fluorine is reduced.</p>
+                        </div>
+
+                        Many reactions in organic chemistry are redox reactions due to changes in oxidation states but
+                        without distinct electron transfer. For example, during the combustion of wood with molecular
+                        oxygen, the oxidation state of carbon atoms in the wood increases and that of oxygen atoms
+                        decreases as carbon dioxide and water are formed. The oxygen atoms undergo reduction, formally
+                        gaining electrons, while the carbon atoms undergo oxidation, losing electrons. Thus oxygen is
+                        the oxidizing agent and carbon is the reducing agent in this reaction.<br><br>
+
+                        Although oxidation reactions are commonly associated with the formation of oxides from oxygen
+                        molecules, oxygen is not necessarily included in such reactions, as other chemical species can
+                        serve the same function.<br><br>
+
+                        Redox reactions can occur relatively slowly, as in the formation of rust, or much more rapidly,
+                        as in the case of burning fuel. There are simple redox processes, such as the oxidation of
+                        carbon to yield carbon dioxide (CO<sub>2</sub>) or the reduction of carbon by hydrogen to yield
+                        methane
+                        (CH<sub>4</sub>), and more complex processes such as the oxidation of glucose
+                        (C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>) in the
+                        human body.
+                        Analysis of bond energies and ionization energies in water allow calculation of the redox
+                        potentials.<br><br>
+
+                        <h4 style="font-family: 'Alex Brush';font-size: 26px;">Examples of redox reactions</h4>
+                        <hr style="border-color: rgb(12, 12, 12);">
+
+                        In the reaction between hydrogen and fluorine, hydrogen is being oxidized and fluorine is being
+                        reduced:<br>
+
+                        H<sub>2</sub> + F<sub>2</sub> → 2HF <br><br>
+                        <div align="center">
+                            <img style="width:80%;height80%"
+                                src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Redox_reaction.png"
+                                alt="">
+                            <p>Illustration of a redox reaction</p>
+                        </div>
+                        the oxidation reaction:
+
+                        H<sub>2</sub> → 2H<sup>+</sup> + 2e<sup>-</sup><br>
+                        and the reduction reaction:
+
+                        F<sub>2</sub> + 2e<sup>-</sup> → 2F<sup>-</sup><br>
+                        <h4 style="font-family: 'Alex Brush';font-size: 26px;">Metal displacement</h4>
+                        <hr style="border-color: rgb(12, 12, 12);">
+
+                        In this type of reaction, a metal atom in a compound (or in a solution) is replaced by an atom of
+                        another metal. For example, copper is deposited when zinc metal is placed in a copper(II)
+                        sulfate solution:
+
+                        Zn(s)+ CuSO<sub>4</sub>(aq) → ZnSO<sub>4</sub>(aq) + Cu(s)
+
+                        In the above reaction, zinc metal displaces the copper(II) ion from copper sulfate solution and
+                        thus liberates free copper metal. The reaction is spontaneous and releases 213 kJ per 65 g of
+                        zinc because relative to zinc, copper metal is lower in energy due to bonding via its partially
+                        filled d-orbitals.<br><br>
+
+                        <div align="center">
+                            <img style="width:80%;height80%"
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Galvanic_cell_with_no_cation_flow.png/525px-Galvanic_cell_with_no_cation_flow.png"
+                                alt="">
+                            <p>A redox reaction is the force behind an electrochemical cell like the Galvanic cell
+                                pictured. The battery is made out of a zinc electrode in a ZnSO<sub>4</sub> solution
+                                connected with
+                                a wire and a porous disk to a copper electrode in a CuSO<sub>4</sub> solution.</p>
+                        </div>
+                        <br>
+                        The ionic equation for this reaction is:<br>
+
+                        Zn + Cu<sub>2</sub><sup>+</sup> → Zn<sub>2</sub><sup>+</sup> + Cu <br>
+                        As two half-reactions, it is seen that the zinc is oxidized:<br>
+
+                        Zn → Zn<sub>2</sub><sup>+</sup> + 2 e<sup>-</sup> <br>
+                        And the copper is reduced: <br>
+
+                        Cu<sub>2</sub><sup>+</sup> + 2 e<sup>-</sup> → Cu
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+    
+{% endblock %}

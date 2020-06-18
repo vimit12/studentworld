@@ -1,0 +1,317 @@
+{%extends 'physics/base.html' %}
+{% load static %}
+{% block title%}Optics{% endblock %}
+
+{% block script %}
+<!-- <script type="text/javascript" src="{% static "js/physics/specificheat.js" %}"></script> -->
+<script type="text/javascript" src="{% static "js/physics/specificheat.min.js" %}"></script>
+{% endblock %}
+
+{% block physics_body%}
+<div class="container-fluid">
+    <h2 align="center" style="font-family: 'Abhaya Libre';font-size: 36px;">What is Optics?</h2>
+    <p>A branch of physics that studies electromagnetic radiation (for example, light and infrared radiation), its
+        interactions with matter, and instruments used to gather information due to these interactions. Optics includes
+        the study of sight.Optics usually describes the behaviour of visible, ultraviolet, and infrared light. Because
+        light is an electromagnetic wave, other forms of electromagnetic radiation such as X-rays, microwaves, and radio
+        waves exhibit similar properties.<br><br>
+        Optics is the science of light. You rely on optics every day. Your digital camera, wireless mouse, and even your
+        Blu-ray disc of your favorite movie are all technologies enabled by the science of optics. More specifically,
+        optics is a branch of physics describing how light behaves and interacts with matter.
+    </p>
+    <hr>
+    <h2 style="font-family: 'Abhaya Libre';font-size: 36px;">Light And Its Optical Properties</h2>
+    <p>Light is a form of energy which is in the form of an electromagnetic wave and is almost everywhere around us. The
+        visible light has wavelengths measuring between 400–700 nanometres. Sun is the primary source of light by which
+        plants utilize this to produce their energy.
+        <hr>
+        <div class="row">
+            <div class="col-4">
+                <div class="list-group" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list"
+                        href="#list-radio" role="tab" aria-controls="home">Radio</a>
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list"
+                        href="#list-microwave" role="tab" aria-controls="profile">Microwave</a>
+                    <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list"
+                        href="#list-infrared" role="tab" aria-controls="messages">Infrared</a>
+                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list"
+                        href="#list-visible" role="tab" aria-controls="settings">Visible</a>
+                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list"
+                        href="#list-utlra" role="tab" aria-controls="settings">Ultraviolet</a>
+                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list"
+                        href="#list-xray" role="tab" aria-controls="settings">X-ray</a>
+                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list"
+                        href="#list-gamma" role="tab" aria-controls="settings">Gamma ray</a>
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="list-radio" role="tabpanel"
+                        aria-labelledby="list-home-list">Your radio captures radio waves emitted by radio stations,
+                        bringing your favorite tunes. Radio waves are also emitted by stars and gases in space.
+                    <br><br>Radio waves are a type of electromagnetic radiation with wavelengths in the electromagnetic
+                    spectrum longer than infrared light. Radio waves have frequencies as high as 300 gigahertz (GHz) to
+                    as low as 30 hertz (Hz). At 300 GHz, the corresponding wavelength is 1 mm, and at 30 Hz is 10,000
+                    km. Like all other electromagnetic waves, radio waves travel at the speed of light in
+                    vacuum.<br><br>Radio waves are generated artificially by transmitters and received by radio
+                    receivers, using antennas. Radio waves are very widely used in modern technology for fixed and
+                    mobile radio communication, broadcasting, radar and radio navigation systems, communications
+                    satellites, wireless computer networks and many other applications.</div>
+
+                    <div class="tab-pane fade" id="list-microwave" role="tabpanel" aria-labelledby="list-profile-list">
+                        Microwave radiation will cook your popcorn in just a few minutes, but is also used by
+                        astronomers to learn about the structure of nearby galaxies.<br><br>
+                        Microwaves are a form of electromagnetic radiation with wavelengths ranging from about one meter
+                        to one millimeter; with frequencies between 300 MHz (1 m) and 300 GHz (1 mm).
+                        Different sources define different frequency ranges as microwaves; the above broad definition
+                        includes both UHF(Ultra High Frequency) and EHF(Extremely High Frequency) (millimeter wave)
+                    </div>
+
+                    <div class="tab-pane fade" id="list-infrared" role="tabpanel" aria-labelledby="list-messages-list">
+                        Night vision goggles pick up the infrared light emitted by our skin and objects with heat. In
+                        space, infrared light helps us map the dust between stars. <br><br>
+                        Infrared (IR), sometimes called infrared light, is electromagnetic radiation (EMR) with
+                        wavelengths longer than those of visible light. It is therefore generally invisible to the human
+                        eye, although IR at wavelengths up to 1050 nanometers (nm)s from specially pulsed lasers can be
+                        seen by humans under certain conditions. IR wavelengths extend from the nominal red
+                        edge of the visible spectrum at 700 nanometers (frequency 430 THz), to 1 millimeter (300
+                        GHz). Most of the thermal radiation emitted by objects near room temperature is infrared.
+                    </div>
+
+                    <div class="tab-pane fade" id="list-visible" role="tabpanel" aria-labelledby="list-settings-list">
+                       Our eyes detect visible light. Fireflies, light bulbs, and stars all emit visible light.<br><br>
+                       Light or visible light is electromagnetic radiation within the portion of the electromagnetic
+                       spectrum that can be perceived by the human eye. Visible light is usually defined as having
+                       wavelengths in the range of 400–700 nanometers (nm), or 4.00 × 10 <sup>−7</sup> to 7.00 ×
+                       10<sup>−7</sup> m, between the
+                       infrared (with longer wavelengths) and the ultraviolet (with shorter wavelengths). This
+                       wavelength means a frequency range of roughly 430–750 terahertz (THz).
+                       <div style="padding: 2em;">
+                           <img style="width: 80%;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Linear_visible_spectrum.svg/1200px-Linear_visible_spectrum.svg.png"
+                               alt="">
+                           
+                       </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="list-utlra" role="tabpanel" aria-labelledby="list-settings-list">
+                        Ultraviolet radiation is emitted by the Sun and are the reason skin tans and burns. "Hot"
+                        objects in space emit UV radiation as well.<br><br>
+                        Ultraviolet (UV) is electromagnetic radiation with wavelength from 10 nm (with a corresponding
+                        frequency of approximately 30 PHz) to 400 nm (750 THz), shorter than that of visible light but
+                        longer than X-rays. UV radiation is present in sunlight, and constitutes about 10% of the total
+                        electromagnetic radiation output from the Sun. It is also produced by electric arcs and
+                        specialized lights, such as mercury-vapor lamps, tanning lamps, and black lights. Although
+                        long-wavelength ultraviolet is not considered an ionizing radiation because its photons lack the
+                        energy to ionize atoms, it can cause chemical reactions and causes many substances to glow or
+                        fluoresce.
+                    </div>
+
+                    <div class="tab-pane fade" id="list-xray" role="tabpanel" aria-labelledby="list-settings-list">
+                        A dentist uses X-rays to image your teeth, and airport security uses them to see through your
+                        bag. Hot gases in the Universe also emit X-rays.<br><br>
+                        X-rays make up X-radiation, a form of high-energy electromagnetic radiation. Most X-rays have a
+                        wavelength ranging from 10 picometres to 10 nanometres, corresponding to frequencies in the
+                        range 30 petahertz to 30 exahertz (3×10 <sup> 16</sup> Hz to 3×10<sup>19</sup> Hz) and energies
+                        in the range 100 eV to 200 keV. X-ray wavelengths are shorter than those of UV rays and typically longer than those of gamma rays. In many languages, X-radiation is referred to as Röntgen radiation, after the German scientist Wilhelm Röntgen.
+                        <div style="padding: 2em;">
+                            <img style="width: 80%;"
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/X-ray_applications.svg/600px-X-ray_applications.svg.png" alt="">
+
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="list-gamma" role="tabpanel" aria-labelledby="list-settings-list">
+                        Doctors use gamma-ray imaging to see inside your body. The biggest gamma-ray generator of all is
+                        the Universe. <br><br>
+                        A gamma ray, or gamma radiation (symbol γ ), is a penetrating
+                        electromagnetic radiation arising from the radioactive decay of atomic nuclei. It consists of
+                        the shortest wavelength electromagnetic waves and so imparts the highest photon energy.<br>
+                        Gamma rays from radioactive decay are in the energy range from a few kiloelectronvolts (keV) to
+                        approximately 8 megaelectronvolts (~8 MeV), corresponding to the typical energy levels in nuclei
+                        with reasonably long lifetimes. The energy spectrum of gamma rays can be used to identify the
+                        decaying radionuclides using gamma spectroscopy. Very-high-energy gamma rays in the 100–1000
+                        teraelectronvolt (TeV) range have been observed from sources such as the Cygnus X-3 microquasar.
+                        <div style="padding: 2em;">
+                            <img style="width: 80%;"
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Gamma_Decay.svg/360px-Gamma_Decay.svg.png"
+                                alt=""><br>Illustration of an emission of a gamma ray (γ) from an atomic nucleus
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <hr>
+    </p>
+
+    <div align="center">
+        <img src="https://imagine.gsfc.nasa.gov/Images/science/EM_spectrum_sm.jpg" alt="">
+        <p>The electromagnetic spectrum from lowest energy/longest wavelength (at the top) to highest energy/shortest
+            wavelength (at the bottom). (Credit: NASA's Imagine the Universe)</p>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-4">
+            <div class="list-group" id="list-tab" role="tablist">
+                <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list"
+                    href="#list-reflection" role="tab" aria-controls="home">Reflection</a>
+                <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list"
+                    href="#list-refraction" role="tab" aria-controls="profile">Refraction</a>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="list-reflection" role="tabpanel"
+                    aria-labelledby="list-home-list">
+                    The law of reflection says that the reflected ray lies in the plane of incidence, and the angle of
+                    reflection equals the angle of incidence.<br><br>
+                    Reflection is the change in direction of a wavefront at an interface between two different media so
+                    that the wavefront returns into the medium from which it originated. Common examples include the
+                    reflection of light, sound and water waves. The law of reflection says that for specular reflection
+                    the angle at which the wave is incident on the surface equals the angle at which it is reflected.
+                    Mirrors exhibit specular reflection.<br><br>
+                    In acoustics, reflection causes echoes and is used in sonar. In geology, it is important in the
+                    study of seismic waves. Reflection is observed with surface waves in bodies of water. Reflection is
+                    observed with many types of electromagnetic wave, besides visible light. Reflection of VHF and
+                    higher frequencies is important for radio transmission and for radar. Even hard X-rays and gamma
+                    rays can be reflected at shallow angles with special "grazing" mirrors.
+                    <div align="center">
+                        <img style="width: 60%;"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Reflection_angles.svg/170px-Reflection_angles.svg.png"
+                            alt="">
+                    </div>
+                    <hr>
+                    <h4 align="center" style="font-family: 'Abhaya Libre';font-size: 22px;">Laws of reflection</h4>
+                    <ol>
+                        <li>The incident ray, the reflected ray and the normal to the reflection surface at the point of
+                            the incidence lie in the same plane.</li>
+                        <li>The angle which the incident ray makes with the normal is equal to the angle which the
+                            reflected ray makes to the same normal.</li>
+                        <li>The reflected ray and the incident ray are on the opposite sides of the normal.</li>
+                    </ol><br>
+                    <div align="center">
+                        <img style="width: 60%;"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/RefractionReflextion.svg/975px-RefractionReflextion.svg.png" alt="">
+                            <p>Refraction of light at the interface between two media.</p>
+                    </div>
+                    <hr>
+                    <h4 align="center" style="font-family: 'Abhaya Libre';font-size: 22px;">Total internal reflection
+                    </h4>
+                    <p>Total internal reflection, in physics, complete reflection of a ray of light within a medium such
+                        as water or glass from the surrounding surfaces back into the medium. The phenomenon occurs if
+                        the angle of incidence is greater than a certain limiting angle, called the critical angle. In
+                        general, total internal reflection takes place at the boundary between two transparent media
+                        when a ray of light in a medium of higher index of refraction approaches the other medium at an
+                        angle of incidence greater than the critical angle. For a water-air surface the critical angle
+                        is 48.5°. Because indices of refraction depend on wavelength, the critical angle (and hence the
+                        angle of total internal reflection) will vary slightly with wavelength and, therefore, with
+                        colour. At all angles less than the critical angle, both refraction and reflection occur in
+                        varying proportions.</p>
+                </div>
+                <div class="tab-pane fade" id="list-refraction" role="tabpanel" aria-labelledby="list-profile-list">The
+                    law of refraction says that the refracted ray lies in the plane of incidence, and the sine of the
+                    angle of refraction divided by the sine of the angle of incidence is a constant:<br>
+                    Sin i/Sin r = n <br><br>
+                    In physics, refraction is the change in direction of a wave passing from one medium to another or
+                    from a gradual change in the medium. Refraction of light is the most commonly observed
+                    phenomenon, but other waves such as sound waves and water waves also experience refraction. How much
+                    a wave is refracted is determined by the change in wave speed and the initial direction of wave
+                    propagation relative to the direction of change in speed.<br><br>
+                    <div align="center">
+                        <img style="width: 60%;"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Refraction_photo.png/330px-Refraction_photo.png"
+                            alt="">
+                            <p>A ray of light being refracted in a plastic block.</p>
+                    </div><br>
+                    For light, refraction follows <strong>Snell's law</strong> , which states that, for a given pair of
+                    media, the ratio of the sines of the angle of incidence θ<sub>1</sub> and angle of refraction
+                    θ<sub>2</sub> is equal to the ratio of phase velocities (v<sub>1</sub>/ v<sub>2</sub>) in the two media, or equivalently, to the indices of refraction (n<sub>2</sub> / n<sub>1</sub>) of the two media.<br><br>
+                    Optical prisms and lenses use refraction to redirect light, as does the human eye. The refractive
+                    index of materials varies with the wavelength of light, and thus the angle of the refraction also
+                    varies correspondingly. This is called dispersion and causes prisms and rainbows to divide white
+                    light into its constituent spectral colors.<br><br>
+                    <div align="center">
+                        <img style="width: 60%;"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Snells_law.svg/330px-Snells_law.svg.png"
+                            alt="">
+                        <p>Refraction of light at the interface between two media of different refractive indices, with
+                            n<sub>2</sub> &gt; n<sub>1</sub>. Since the phase velocity is lower in the second medium
+                            (v<sub>2</sub> &lt; v<sub>1</sub>), the angle of refraction θ<sub>2</sub> is less than the
+                            angle of incidence θ<sub>1</sub>; that is, the ray in the higher-index medium is closer to
+                            the normal.</p>
+                    </div><br>
+                    <hr>
+                    <h4 align="center" style="font-family: 'Abhaya Libre';font-size: 22px;">Laws of refraction</h4>
+                    <p>For light, the refractive index n of a material is more often used than the wave phase speed v in
+                        the material. They are, however, directly related through the speed of light in vacuum c as <br>
+                        n = c/v <br>
+                        In optics, therefore, the law of refraction is typically written as <br>
+                        n<sub>1</sub>.Sinθ<sub>1</sub> = n<sub>2</sub>.Sinθ<sub>2</sub> <button
+                            style="margin:0em 0em 0em 1em;color: black;" class="btn btn-outline-warning" type="submit"
+                            data-toggle="modal" data-target="#refraction">n<sub>1</sub>.Sinθ<sub>1</sub> =
+                            n<sub>2</sub>.Sinθ<sub>2</sub> </button>
+
+                    </p>
+                    <div align="center">
+                        <img style="width: 60%;"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Light_dispersion_conceptual_waves.gif/330px-Light_dispersion_conceptual_waves.gif"
+                            alt="">
+                        <p>Conceptual animation of light dispersion through a prism. High frequency (blue) light is
+                            deflected the most, and low frequency (red) the least.</p>
+                    </div><br>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+ </div>
+
+<div class="modal fade" id="refraction" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="font-family: 'Abhaya Libre';font-size: 28px;">
+                    Laws of refraction</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p style="font-size: 12px;color: red;">Standard S.I Unit only (Any of the two input are required)</p>
+                <form>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">θ<sub>1</sub></label>
+                        <input type="text" class="form-control" id="thetha1" placeholder="Enter θ1"
+                            onkeypress="return onlyNumberKey1(event)" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">θ<sub>2</sub></label>
+                        <input type="text" class="form-control" id="thetha2" placeholder="Enter θ2"
+                            onkeypress="return onlyNumberKey1(event)" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">n<sub>1</sub></label>
+                        <input type="text" class="form-control" id="index1" placeholder="Enter n1"
+                            onkeypress="return onlyNumberKey1(event)" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">n<sub>2</sub></label>
+                        <input type="text" class="form-control" id="index2" placeholder="Enter n2"
+                            onkeypress="return onlyNumberKey1(event)" />
+                    </div>
+                </form>
+                <p id="error_msgr1" style="font-size: 12px;color: red;"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="refraction()">Calculate</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

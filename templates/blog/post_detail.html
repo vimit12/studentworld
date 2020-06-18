@@ -1,0 +1,64 @@
+{%extends 'blog/index.html' %}
+
+{% block title_block%}{{post.title}}{%endblock%}
+
+{%block content%}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'blog-home' %}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{post.title}}</li>
+        </ol>
+    </nav>
+    <h3 style="font-family: 'Dr Sugiyama';font-size: 48px; padding-left: 0.25em;">{{post.title}}</h3>
+    <hr class="my-4">
+    <footer class="blockquote-footer" style="padding: 0 0 1em 2em;">Publishes on {{post.publish}} by <cite
+            title="Source Title"><strong>{{post.author}}</strong></cite></footer>
+    {{post.body|linebreaks}}
+    <hr class="my-4">
+    <div class="sendmail">
+        <a href="/{{post.id}}/share" class=" btn btn-info" >Share Post by
+            Email</a>
+    </div>
+
+    {% with comments.count as comments_count %}
+    <h5 style="font-family: 'DM Serif Text';font-size: 18px;padding: 1em 0 0 0;">{{comments_count}}
+        Comment{{comments_count|pluralize}}</h5>
+    {% endwith %}
+
+    <div class="comment_section">
+        {% if comments%}
+            {% for comment in comments %}
+                <!-- <p>Comment {{forloop.counter}} by {{comment.name}} on {{comment.created}}</p> -->
+                <footer class="blockquote-footer" style="padding: 0 0 1em 0.25em;border-bottom: 1px solid gray;margin:0 40em 0 0.25em;">Comment {{forloop.counter}}
+                     on {{comment.created}} by <cite title="Source Title"><strong style="color: black;">{{comment.name}}</strong></cite></footer>
+                <div style="font-family: 'Gupter';font-size: 18px;padding:0 0 0 1em;">
+                    {{comment.body|linebreaks}}
+                </div>
+            {%endfor%}
+        {% else %}
+            <p>No comments yet</p>
+        {% endif %}
+    </div>
+    <div class="container post_comment">
+        <div class="row">
+            <input type="submit" class="btn btn-dark" value="Add Comment" style="margin:1em 0 0 0.25em;" onclick="show_comment();">
+            <div class="col-sm-9" id="toggle_comment">
+                    {% if csubmit %}
+                    <h3 style="font-family: 'Jim Nightshade';font-size: 35px; padding-left: 0.25em;">Your comment added
+                        Successfully</h3>
+                    {% else %}
+                    <h3 style="font-family: 'Jim Nightshade';font-size: 35px; padding-left: 0.25em;">Add comment on Post
+                    </h3>
+                    <form action="" method="POST">
+                        {{form.as_p}}
+                        {%csrf_token%}
+                        <input type="submit" class="btn btn-info" value="Submit Comment">
+                    </form>
+                    {% endif %}
+            </div>
+        </div>
+       
+    </div>
+   
+{%endblock%}
+

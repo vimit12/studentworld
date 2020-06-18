@@ -1,0 +1,450 @@
+{%extends 'physics/base.html' %}
+{% load static %}
+{% block title%}Buoyancy Force{% endblock %}
+
+{% block script %}
+<!-- <script type="text/javascript" src="{% static "js/physics/kinematic.js" %}"></script> -->
+<!-- <script type="text/javascript" src="{% static "js/physics/escape_velocity.js" %}"></script> -->
+<script type="text/javascript" src="{% static "js/physics/escape_velocity.min.js" %}"></script>
+<script type="text/javascript" src="{% static "js/convert.js" %}"></script>
+{% endblock %}
+
+{% block physics_body%}
+<div class="container-fluid">
+    <h2 align="center" style="font-family: 'Abhaya Libre';font-size: 36px;">What is Elastic collision ?</h2><hr>
+    <p>An elastic collision is an encounter between two bodies in which the total kinetic energy of the two bodies
+        remains the same. In an ideal, perfectly elastic collision, there is no net conversion of kinetic energy into
+        other forms such as heat, noise, or potential energy.
+        <br><br>
+        During the collision of small objects, kinetic energy is first converted to potential energy associated with a
+        repulsive force between the particles (when the particles move against this force, i.e. the angle between the
+        force and the relative velocity is obtuse), then this potential energy is converted back to kinetic energy (when
+        the particles move with this force, i.e. the angle between the force and the relative velocity is acute).<br><br>
+
+        The molecules—as distinct from atoms—of a gas or liquid rarely experience perfectly elastic collisions because
+        kinetic energy is exchanged between the molecules’ translational motion and their internal degrees of freedom
+        with each collision. At any instant, half the collisions are, to a varying extent, inelastic collisions (the
+        pair possesses less kinetic energy in their translational motions after the collision than before), and half
+        could be described as “super-elastic” (possessing more kinetic energy after the collision than before). Averaged
+        across the entire sample, molecular collisions can be regarded as essentially elastic as long as Planck's law
+        forbids black-body photons to carry away energy from the system.
+    </p>
+    <div align="center">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Translational_motion.gif" alt="">
+        <p>On average, two atoms rebound from each other with the same kinetic energy as before a collision.</p>
+    </div>
+    <hr>
+    <h2 style="font-family: 'Abhaya Libre';font-size: 36px;">Equations : </h2>
+    <h4 style="font-family: 'Abhaya Libre';">One-dimensional Newtonian</h4>
+    <p>Consider particles 1 and 2 with masses m1, m2, and velocities u1, u2 before collision, v1, v2 after collision.<br>
+
+        The conservation of the total momentum before and after the collision is expressed by:<br><br>
+        <strong><i>m<sub>1</sub>.u<sub>1</sub> + m<sub>2</sub>.u<sub>2</sub> = m<sub>1</sub>.v<sub>1</sub> +
+            m<sub>2</sub>.v<sub>2</sub></i></strong>
+             <button style="margin:0em 1em 1em 1em;color: black;" class="btn btn-outline-warning" type="submit" data-toggle="modal" data-target="#formula1"><i>m<sub>1</sub>.u<sub>1</sub> + m<sub>2</sub>.u<sub>2</sub> =
+                    m<sub>1</sub>.v<sub>1</sub> + m<sub>2</sub>.v<sub>2</sub></i></button><br>
+        
+        Likewise, the conservation of the total kinetic energy is expressed by : <br><br>
+        <strong>
+        <i>1/2(m<sub>1</sub>.u<sub>1</sub><sup>2</sup>) + 1/2(m<sub>2</sub>.u<sub>2</sub><sup>2</sup>) =
+            1/2(m<sub>1</sub>.v<sub>1</sub><sup>2</sup>) + 1/2(m<sub>2</sub>.v<sub>2</sub><sup>2</sup>)</i></strong>
+        
+        <button style="margin:0em 1em 1em 1em;color: black;" class="btn btn-outline-warning" type="submit"
+            data-toggle="modal" data-target="#formula2"><i>1/2(m<sub>1</sub>.u<sub>1</sub><sup>2</sup>) +
+                1/2(m<sub>2</sub>.u<sub>2</sub><sup>2</sup>) =
+                1/2(m<sub>1</sub>.v<sub>1</sub><sup>2</sup>) + 1/2(m<sub>2</sub>.v<sub>2</sub><sup>2</sup>)</i></button>
+        <hr>
+        <div align="center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Elastischer_sto%C3%9F3.gif" alt="">
+            <p>Elastic collision of unequal masses.</p>
+        </div>
+        <hr>
+        The following illustrate the case of equal mass, m<sub>2</sub> = m<sub>1</sub>.
+        <div align="center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c6/Elastischer_sto%C3%9F.gif" alt="">
+            <p>Elastic collision of equal masses.</p>
+        </div>
+        <div align="center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Elastischer_sto%C3%9F2.gif" alt="">
+            <p>Elastic collision of masses in a system with a moving frame of reference.</p>
+        </div>
+        <hr>
+        <h4 style="font-family: 'Abhaya Libre';">Two-dimensional</h4>
+        <div align="center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Elastischer_sto%C3%9F_2D.gif" alt="">
+            <p>Two-dimensional elastic collision.</p>
+        </div><br>
+        For the case of two colliding bodies in two dimensions, the overall velocity of each body must be split into two
+        perpendicular velocities: one tangent to the common normal surfaces of the colliding bodies at the point of contact, the other along the line of collision. Since the collision only imparts force along the line of collision, the velocities that are tangent to the point of collision do not change. The velocities along the line of collision can then be used in the same equations as a one-dimensional collision. The final velocities can then be calculated from the two new component velocities and will depend on the point of collision. Studies of two-dimensional collisions are conducted for many bodies in the framework of a two-dimensional gas.
+    </p>
+    <hr>
+    <h2 align="center" style="font-family: 'Abhaya Libre';font-size: 36px;">What is Inelastic collision ?</h2><hr>
+    <p>
+        An inelastic collision, in contrast to an elastic collision, is a collision in which kinetic energy is not conserved due to the action of internal friction.<br>
+        
+        In collisions of macroscopic bodies, some kinetic energy is turned into vibrational energy of the atoms, causing a
+        heating effect, and the bodies are deformed.<br>
+        
+        The molecules of a gas or liquid rarely experience perfectly elastic collisions because kinetic energy is exchanged between the molecules' translational motion and their internal degrees of freedom with each collision. At any one instant, half the collisions are – to a varying extent – inelastic (the pair possesses less kinetic energy after the collision than before), and half could be described as "super-elastic" (possessing more kinetic energy after the collision than before). Averaged across an entire sample, molecular collisions are elastic.
+        <br><br>
+        Although inelastic collisions do not conserve kinetic energy, they do obey conservation of momentum. Simple ballistic pendulum problems obey the conservation of kinetic energy only when the block swings to its largest angle.<br><br>
+        <strong>
+        Formula Given as : 
+        <i>m<sub>1</sub>.u<sub>1</sub> + m<sub>2</sub>.u<sub>2</sub> = (m<sub>1</sub> +
+            m<sub>2</sub>).v</i></strong> 
+            <button style="margin:0em 1em 1em 1em;color: black;" class="btn btn-outline-warning"
+            type="submit" data-toggle="modal" data-target="#formula3"><i>m<sub>1</sub>.u<sub>1</sub> + m<sub>2</sub>.u<sub>2</sub> = (m<sub>1</sub> + m<sub>2</sub>).v</i></button><br>
+        <div align="center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/de/Inelastischer_sto%C3%9F.gif" alt="">
+            <p>A Perfectly inelastic collision between equal masses.</p>
+        </div><br>
+
+    </p>
+    <hr>
+    <div class="row">
+        <div class="col-sm-6">
+            <button style="margin:0em 1em 1em 1em;color: black;" class="btn btn-outline-warning" type="submit"
+                data-toggle="modal" data-target="#weight">Mass Conversion</button>
+        </div>
+        <div class="col-sm-6">
+            <button style="margin:0em 1em 1em 1em;color: black;" class="btn btn-outline-warning" type="submit"
+                data-toggle="modal" data-target="#velocity">Velocity/Speed Conversion</button>
+        </div>
+       
+    </div>
+
+    <div class="modal fade" id="weight" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle"
+                        style="font-family: 'Abhaya Libre';font-size: 28px;">
+                        Mass</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12 unit">
+                            <label for="quantity">Quantity :</label>
+                            <input type="text" class="form-control" id="quantitywt" placeholder="Enter Weight"
+                                onkeypress="return onlyNumberKey4(event)" />
+                            <p id="error_msg4" style="font-size: 12px;color: red;"></p>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="units">From :</label>
+                            <select id="fromweight" value="units" class="UnitInput form-control">
+                                <option value="gm">Gram</option>
+                                <option value="mg">Milligram</option>
+                                <option value="kg">Kilogram</option>
+                                <option value="tn">Metric Tons</option>
+                                <option value="oc">Ounce</option>
+                                <option value="lb">Pound</option>
+                                <option value="qn">Quintal</option>
+                            </select>
+                            <p id="error_msg5" style="font-size: 12px;color: red;"></p>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="units">To :</label>
+                            <select id="toweight" value="units" class="UnitInput form-control">
+                                <option value="gm">Gram</option>
+                                <option value="mg">Milligram</option>
+                                <option value="kg">Kilogram</option>
+                                <option value="tn">Metric Tons</option>
+                                <option value="oc">Ounce</option>
+                                <option value="lb">Pound</option>
+                                <option value="qn">Quintal</option>
+                            </select>
+                            <p id="error_msg6" style="font-size: 12px;color: red;"></p>
+                        </div>
+                    </div>
+                    <p id="success_msg2" style="font-weight: 500;font-size: 14px;color: rgb(31, 112, 7);"></p>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning swap" title="swap"
+                        onclick="swap_weight()">Swap</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" title="close">Close</button>
+                    <button type="button" class="btn btn-primary" title="convert"
+                        onclick="weightConversion()">Convert</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="velocity" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle" style="font-family: 'Amita';font-size: 22px;">
+                        Velocity
+                    </h5>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12 unit">
+                            <label for="quantity">Quantity :</label>
+                            <input type="text" class="form-control" id="quantityVelocity"
+                                onkeypress="return NumberOnlyKey(event)" />
+                            <p id="error_msgv1" style="font-size: 12px;color: red;"></p>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="units">From :</label>
+                            <select id="fromvelocity" value="units" class="UnitInput form-control">
+                                <option value="cm/s">cm/s</option>
+                                <option value="m/s">m/s</option>
+                                <option value="km/hr">km/hr</option>
+                                <option value="km/min">km/min</option>
+                                <option value="km/s">km/s</option>
+                                <option value="ft/hr">ft/hr</option>
+                                <option value="ft/s">ft/s</option>
+                                <option value="mch">Mach</option>
+                                <option value="kn">Knot[UK]</option>
+                            </select>
+                            <p id="error_msgv2" style="font-size: 12px;color: red;"></p>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="units">To :</label>
+                            <select id="tovelocity" value="units" class="UnitInput form-control">
+                                <option value="cm/s">cm/s</option>
+                                <option value="m/s">m/s</option>
+                                <option value="km/hr">km/hr</option>
+                                <option value="km/min">km/min</option>
+                                <option value="km/s">km/s</option>
+                                <option value="ft/hr">ft/hr</option>
+                                <option value="ft/s">ft/s</option>
+                                <option value="mch">Mach</option>
+                                <option value="kn">Knot[UK]</option>
+                            </select>
+                            <p id="error_msgv3" style="font-size: 12px;color: red;"></p>
+                        </div>
+                    </div>
+                    <p id="success_msgv1" style="font-size: 16px;color: rgb(9, 134, 36);font-weight: 500;"></p>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" title="swap" onclick="swap_velocity()">Swap</button>
+                    <button type="button" class="btn btn-dark" data-dismiss="modal" title="close">Close</button>
+                    <button type="button" class="btn btn-primary" title="evaluate"
+                        onclick="velocityConversion()">Convert</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="formula2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel" style="font-family: 'Abhaya Libre';font-size: 28px;">
+                       <i>m<sub>1</sub>.u<sub>1</sub> + m<sub>2</sub>.u<sub>2</sub> =
+                                m<sub>1</sub>.v<sub>1</sub> + m<sub>2</sub>.v<sub>2</sub></i></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p style="font-size: 12px;color: red;">Standard S.I Unit only (Any of the three input are required)
+                    </p>
+                    <form>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label for="recipient-name" class="col-form-label">m<sub>1</sub></label>
+                                    <input type="text" class="form-control" id="fm1"
+                                    placeholder="Enter m₁" onkeypress="return onlyNumberKeyf2(event)" />
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="recipient-name" class="col-form-label">m<sub>2</sub></label>
+                                    <input type="text" class="form-control" id="fm2"
+                                        placeholder="Enter m₂" onkeypress="return onlyNumberKeyf2(event)" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label for="recipient-name" class="col-form-label">u<sub>1</sub></label>
+                                    <input type="text" class="form-control" id="fu1" placeholder="Enter u₁"
+                                        onkeypress="return onlyNumberKeyf2(event)" />
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="recipient-name" class="col-form-label">u<sub>2</sub></label>
+                                    <input type="text" class="form-control" id="fu2" placeholder="Enter u₂"
+                                        onkeypress="return onlyNumberKeyf2(event)" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label for="recipient-name" class="col-form-label">v<sub>1</sub></label>
+                                    <input type="text" class="form-control" id="fv1" placeholder="Enter v₁"
+                                        onkeypress="return onlyNumberKeyf2(event)" />
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="recipient-name" class="col-form-label">v<sub>2</sub></label>
+                                    <input type="text" class="form-control" id="fv2" placeholder="Enter V₂"
+                                        onkeypress="return onlyNumberKeyf2(event)" />
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <p id="error_msgf2" style="font-size: 12px;color: red;"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="formula2()">Calculate</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="formula1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel" style="font-family: 'Abhaya Libre';font-size: 28px;">
+                       
+                            <i>1/2(m<sub>1</sub>.u<sub>1</sub><sup>2</sup>) +
+                                1/2(m<sub>2</sub>.u<sub>2</sub><sup>2</sup>) =
+                                1/2(m<sub>1</sub>.v<sub>1</sub><sup>2</sup>) +
+                                1/2(m<sub>2</sub>.v<sub>2</sub><sup>2</sup>)</i></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p style="font-size: 12px;color: red;">Standard S.I Unit only (Any of the three input are required)
+                    </p>
+                    <form>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label for="recipient-name" class="col-form-label">m<sub>1</sub></label>
+                                    <input type="text" class="form-control" id="m1" placeholder="Enter m₁"
+                                        onkeypress="return onlyNumberKeyf1(event)" />
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="recipient-name" class="col-form-label">m<sub>2</sub></label>
+                                    <input type="text" class="form-control" id="m2" placeholder="Enter m₂"
+                                        onkeypress="return onlyNumberKeyf1(event)" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label for="recipient-name" class="col-form-label">u<sub>1</sub></label>
+                                    <input type="text" class="form-control" id="u1" placeholder="Enter u₁"
+                                        onkeypress="return onlyNumberKeyf1(event)" />
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="recipient-name" class="col-form-label">u<sub>2</sub></label>
+                                    <input type="text" class="form-control" id="u2" placeholder="Enter u₂"
+                                        onkeypress="return onlyNumberKeyf1(event)" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label for="recipient-name" class="col-form-label">v<sub>1</sub></label>
+                                    <input type="text" class="form-control" id="v1" placeholder="Enter v₁"
+                                        onkeypress="return onlyNumberKeyf1(event)" />
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="recipient-name" class="col-form-label">v<sub>2</sub></label>
+                                    <input type="text" class="form-control" id="v2" placeholder="Enter V₂"
+                                        onkeypress="return onlyNumberKeyf1(event)" />
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <p id="error_msgf1" style="font-size: 12px;color: red;"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="formula1()">Calculate</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="formula3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel" style="font-family: 'Abhaya Libre';font-size: 28px;">
+
+                        <i>1/2(m<sub>1</sub>.u<sub>1</sub><sup>2</sup>) +
+                            1/2(m<sub>2</sub>.u<sub>2</sub><sup>2</sup>) =
+                            1/2(m<sub>1</sub>.v<sub>1</sub><sup>2</sup>) +
+                            1/2(m<sub>2</sub>.v<sub>2</sub><sup>2</sup>)</i></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p style="font-size: 12px;color: red;">Standard S.I Unit only (Any of the three input are required)
+                    </p>
+                    <form>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label for="recipient-name" class="col-form-label">m<sub>1</sub></label>
+                                    <input type="text" class="form-control" id="f1m1" placeholder="Enter m₁"
+                                        onkeypress="return onlyNumberKeyf3(event)" />
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="recipient-name" class="col-form-label">m<sub>2</sub></label>
+                                    <input type="text" class="form-control" id="f1m2" placeholder="Enter m₂"
+                                        onkeypress="return onlyNumberKeyf3(event)" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label for="recipient-name" class="col-form-label">u<sub>1</sub></label>
+                                    <input type="text" class="form-control" id="f1u1" placeholder="Enter u₁"
+                                        onkeypress="return onlyNumberKeyf3(event)" />
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="recipient-name" class="col-form-label">u<sub>2</sub></label>
+                                    <input type="text" class="form-control" id="f1u2" placeholder="Enter u₂"
+                                        onkeypress="return onlyNumberKeyf3(event)" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label for="recipient-name" class="col-form-label">V</label>
+                                    <input type="text" class="form-control" id="V" placeholder="Enter Velocity"
+                                        onkeypress="return onlyNumberKeyf3(event)" />
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <p id="error_msgf3" style="font-size: 12px;color: red;"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="formula3()">Calculate</button>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+</div>
+
+
+
+
+{% endblock %}

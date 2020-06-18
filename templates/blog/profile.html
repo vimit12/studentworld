@@ -1,0 +1,59 @@
+{%extends 'blog/index.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'blog-home' %}">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Profile</li>
+    </ol>
+</nav>
+<div class="container-profile">
+    <div class="media">
+        <div class="media-body" >
+            <div class="row">
+                <div class="col-3">
+                   <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+                </div>
+                <div class="col-9" style="margin: 2em 0 0 0;">
+                    <h4 class="account-heading" style="font-family: 'Croissant One';padding:0 0 0 1em;">{{ user.username }}</h4>
+                    <p class="text-secondary" style="font-family: 'Croissant One';padding:0 0 0 1.5em;">{{ user.email }}</p>
+                    <hr class="my-4">
+                </div>
+            </div>
+        </div>
+    </div>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-">Profile Info</legend>
+            {{ u_form|crispy }}
+            {{ p_form|crispy }}
+        </fieldset>
+        <div class='form-group'>
+            <input type="submit" class="btn btn-info" value="Update">
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+{% block sidebar %}
+
+    <div class="profile_post container" style="padding-top: 10em;">
+        <div class="row">
+            <div class="col-12">
+                <div class="list-type5 user_side_post">
+                    <ol>
+                        {% for key, value in user_module.items %}
+                            <li><a href="{% url 'post_update' key %}">{{ value }}</a></li>
+                        {% endfor %}
+                    </ol>
+                </div>
+            </div>
+            <!-- <div class="col-3"></div> -->
+        </div>
+        
+    </div>
+    
+{%endblock%}

@@ -1,0 +1,82 @@
+{%load static%}
+
+{% block header %}
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha384-PmY9l28YgO4JwMKbTvgaS7XNZJ30MK9FAZjjzXtlqyZCqBY6X6bXIkM++IkyinN+" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href='https://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet'>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-
+q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin=" anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha384-vhJnz1OVIdLktyixHY4Uk3OHEwdQqPppqYR8+5mjsauETgLOcEynD9oPHhhz18Nw" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript" src="{% static "js/base.js" %}"></script>
+
+<style media="screen">
+  .btn-dark{
+    background: black;
+    color: white;
+    width: 5em;
+    margin-right: 1em;
+  }
+  .modal-body{
+    margin-left: 2em;
+  }
+  .navbar-light{
+    background-color: #b4fff9;
+    
+  }
+  .nav_style{
+      font-family: 'Alegreya';
+      font-size: 16px;
+      font-weight: 600;
+      color: black;
+  }
+  
+</style>
+
+<nav class="navbar navbar-light navbar-fixed-top">
+  <div class="container-fluid">
+      <div class="navbar-header">
+      </div>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="nav navbar-nav">
+        <li><a class="active" href="/"><img src="{% static 'image/home.ico' %}" alt=""><span class="nav_style">Home</span></a>
+        </li>
+        <li><a href="\kids"><img src="{% static 'image/kids_section.ico' %}" alt=""><span class="nav_style">Kids Sections</span></a></li>
+        <li><a href="\area"><img src="{% static 'image/area.ico' %}" alt=""><span class="nav_style">Area</span></a>
+        </li>
+        <li><a href="\draw"><img src="{% static 'image/graph.ico' %}" alt=""><span class="nav_style">Draw</span></a>
+        </li>
+        <li><a href="\basic"><img src="{% static 'image/calculator.ico' %}" alt=""><span
+              class="nav_style">Calculator</span></a></li>
+        <li><a href="\blog"><img src="{% static 'image/scn.ico' %}" alt=""><span class="nav_style">Students
+              Blog</span></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'profile' %}" style="0.5em 0.5em 0.5em 0.5em;color: black;" title="Profile"><svg
+                class="bi bi-person-square" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M14 1H2a1 1 0 00-1 1v12a1 1 0 001 1h12a1 1 0 001-1V2a1 1 0 00-1-1zM2 0a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V2a2 2 0 00-2-2H2z"
+                  clip-rule="evenodd" />
+                <path fill-rule="evenodd" d="M2 15v-1c0-1 1-4 6-4s6 3 6 4v1H2zm6-6a3 3 0 100-6 3 3 0 000 6z"
+                  clip-rule="evenodd" />
+              </svg><span class="nav_style profile" style="margin: 0 0.5em 0 0.5em;">Hi! {{request.user}}</span></a></li>
+        {% endif %}
+        <li><a href="\email"><img src="{% static 'image/mail.ico' %}" alt=""><span
+              class="nav_style">Contact</span></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+{% endblock %}

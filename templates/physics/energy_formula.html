@@ -1,0 +1,496 @@
+{%extends 'physics/base.html' %}
+{% load static %}
+{% block title%}Energy Formula{% endblock %}
+
+{% block script %}
+<!-- <script type="text/javascript" src="{% static "js/physics/mass.js" %}"></script> -->
+<script type="text/javascript" src="{% static "js/physics/mass.min.js" %}"></script>
+<!-- <script type="text/javascript" src="{% static "js/physics/kinematic.js" %}"></script> -->
+<script type="text/javascript" src="{% static "js/physics/kinematic.min.js" %}"></script>
+<!-- <script type="text/javascript" src="{% static "js/physics/energy_formula.js" %}"></script> -->
+<script type="text/javascript" src="{% static "js/physics/energy_formula.min.js" %}"></script>
+<script type="text/javascript" src="{% static "js/convert.js" %}"></script>
+{% endblock %}
+
+{% block physics_body%}
+<div class="container-fluid">
+    <h2 align="center" style="font-family: 'Abhaya Libre';font-size: 36px;">What is Energy?</h2>
+    <p>In physics, energy is the quantitative property that must be transferred to an object in order to perform work
+        on, or to heat, the object. Energy is a conserved quantity; the law of conservation of energy states
+        that energy can be converted in form, but not created or destroyed. The SI unit of energy is the
+        <strong>joule [kg m<sup>2</sup> s<sup>-2</sup>]</strong> , which is
+        the energy transferred to an object by the work of moving it a distance of 1 metre against a force of 1 newton.
+        <br><br>
+        Common forms of energy include the <strong>kinetic energy</strong> of a moving object, the
+        <strong>potential energy</strong> stored by an object's
+        position in a force field (gravitational, electric or magnetic), the elastic energy stored by stretching solid
+        objects, the chemical energy released when a fuel burns, the radiant energy carried by light, and the thermal
+        energy due to an object's temperature.<br><br>
+
+        Mass and energy are closely related. Due to mass–energy equivalence, any object that has mass when stationary
+        (called rest mass) also has an equivalent amount of energy whose form is called rest energy, and any additional
+        energy (of any form) acquired by the object above that rest energy will increase the object's total mass just as
+        it increases its total energy. For example, after heating an object, its increase in energy could be measured as
+        a small increase in mass, with a sensitive enough scale.<br><br>
+        Living organisms require energy to stay alive, such as the energy humans get from food. Human civilization
+        requires energy to function, which it gets from energy resources such as fossil fuels, nuclear fuel, or
+        renewable energy. The processes of Earth's climate and ecosystem are driven by the radiant energy Earth receives
+        from the sun and the geothermal energy contained within the earth.
+        <br><br> Kinetic energy is determined by the movement of an object – or the composite motion of the components
+        of an object – and potential energy reflects the potential of an object to have motion, and generally is a
+        function of the position of an object within a field or may be stored in the field itself.<br><br>
+        The Sun is the source of energy for most of life on Earth. It derives its energy mainly from nuclear fusion in
+        its core, converting mass to energy as protons are combined to form helium. This energy is transported to the
+        sun's surface then released into space mainly in the form of radiant (light) energy.
+        <br>
+        <marquee behavior="alternate" direction="right" bgcolor="#e6fff4"> <strong> Speed of light (c)=29,97,92,458 m/s
+        (≈ 3 x 10<sup>8</sup>)</strong></marquee>
+    </p>
+    <hr>
+    <strong>Some forms of energy :-</strong>
+    <table class="table table-hover table-bordered table-striped table-sm">
+        <caption>Other forms of energy</caption>
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">S.No.</th>
+                <th scope="col">Type of energy</th>
+                <th scope="col">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Mechanical</td>
+                <td>the sum of macroscopic translational and rotational kinetic and potential energies</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Electric</td>
+                <td>potential energy due to or stored in electric fields</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Magnetic</td>
+                <td>potential energy due to or stored in magnetic fields</td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td>Gravitational</td>
+                <td>potential energy due to or stored in gravitational fields</td>
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td>Chemical</td>
+                <td>potential energy due to chemical bonds</td>
+            </tr>
+            <tr>
+                <th scope="row">6</th>
+                <td>Ionization</td>
+                <td>potential energy that binds an electron to its atom or molecule</td>
+            </tr>
+            <tr>
+                <th scope="row">7</th>
+                <td>Nuclear</td>
+                <td>potential energy that binds nucleons to form the atomic nucleus (and nuclear reactions)</td>
+            </tr>
+            <tr>
+                <th scope="row">8</th>
+                <td>Elastic</td>
+                <td>potential energy due to the deformation of a material (or its container) exhibiting a restorative
+                    force</td>
+            </tr>
+            <tr>
+                <th scope="row">9</th>
+                <td>Mechanical wave </td>
+                <td>kinetic and potential energy in an elastic material due to a propagated deformational wave</td>
+            </tr>
+            <tr>
+                <th scope="row">10</th>
+                <td>Sound wave</td>
+                <td>kinetic and potential energy in a fluid due to a sound propagated wave (a particular form of
+                    mechanical wave)</td>
+            </tr>
+            <tr>
+                <th scope="row">11</th>
+                <td>Radiant</td>
+                <td>kinetic and potential energy in a fluid due to a sound propagated wave (a particular form of
+                    mechanical wave)</td>
+            </tr>
+            <tr>
+                <th scope="row">12</th>
+                <td>Sound wave</td>
+                <td>potential energy stored in the fields of propagated by electromagnetic radiation, including light
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">13</th>
+                <td>Rest</td>
+                <td>potential energy due to an object's rest mass</td>
+            </tr>
+            <tr>
+                <th scope="row">14</th>
+                <td>Thermal</td>
+                <td>kinetic energy of the microscopic motion of particles, a form of disordered equivalent of mechanical
+                    energy</td>
+            </tr>
+            
+        </tbody>
+    </table>
+    <hr>
+    <div class="row">
+        <div class="col-sm-4">
+            <button style="margin:0em 1em 1em 1em;color: black;" class="btn btn-outline-warning" type="submit"
+                data-toggle="modal" data-target="#velocity">Velocity/Speed Conversion</button>
+        </div>
+        <div class="col-sm-4">
+            <button style="margin:0em 1em 1em 1em;color: black;" class="btn btn-outline-warning" type="submit"
+                data-toggle="modal" data-target="#length1">Displacement Conversion</button>
+        </div>
+        <div class="col-sm-4">
+            <button style="margin:0em 3em 1em 1em;color: black;" class="btn btn-outline-warning" type="submit"
+                data-toggle="modal" data-target="#acceleration1">Acceleration Conversion</button>
+        </div>
+    </div>
+    <hr>
+    <p>
+        Kinetic Energy is given as : 
+        <strong>KE = 1/2(mv<sup>2</sup>)</strong><br>
+        Where,
+        <strong>m = Mass of body, </strong>
+        <strong>v = Velocity </strong>
+        <button style="margin:0em 0em 0em 1em;color: black;" class="btn btn-outline-warning" type="submit"
+            data-toggle="modal" data-target="#formula1Modal">KE = 1/2(mv<sup>2</sup>)</button>
+        <hr>
+    </p>
+
+    <p>
+        Potential Energy is given as :
+        <strong>PE = mgh</strong><br>
+        Where,
+        <strong>m = Mass of body, </strong>
+        <strong>g = Acceleration due to gravity, </strong>
+        <strong>h = Height</strong>
+        <button style="margin:0em 0em 0em 1em;color: black;" class="btn btn-outline-warning" type="submit"
+            data-toggle="modal" data-target="#formula2Modal">PE = mgh</button>
+        <hr>
+    </p>
+    <p>
+        Rest Energy is given as :
+        <strong>E<sub>0</sub>=mc<sup>2</sup></strong><br>
+        Where,
+        <strong>m = Mass of body, </strong>
+        <strong>c = speed of light in vacuum</strong>
+        <button style="margin:0em 0em 0em 1em;color: black;" class="btn btn-outline-warning" type="submit"
+            data-toggle="modal" data-target="#formula3Modal">E<sub>0</sub>=mc<sup>2</sup></button>
+    </p>
+</div>
+
+<div class="modal fade" id="formula1Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="font-family: 'Abhaya Libre';font-size: 28px;">
+                    KE = 1/2(mv<sup>2</sup>)</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p style="font-size: 12px;color: red;">Standard S.I Unit only (Any of the three input are required)</p>
+                <form>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">KE</label>
+                        <input type="text" class="form-control" id="recipient-energy" placeholder="Kinetic Energy"
+                            onkeypress="return onlyNumberKeyk1(event)" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Mass</label>
+                        <input type="text" class="form-control" id="recipient-mass"
+                            placeholder="Enter Mass" onkeypress="return onlyNumberKeyk1(event)" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Velocity</label>
+                        <input type="text" class="form-control" id="recipient-velocity"
+                            placeholder="Enter Velocity" onkeypress="return onlyNumberKeyk1(event)" />
+                    </div>
+                </form>
+                <p id="error_msg1KE" style="font-size: 12px;color: red;"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="formula1_caluclate()">Calculate</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="formula2Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="font-family: 'Abhaya Libre';font-size: 28px;">
+                    PE = mgh</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p style="font-size: 12px;color: red;">Standard S.I Unit only (Any of the three input are required)</p>
+                <form>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Potential Energy</label>
+                        <input type="text" class="form-control" id="recipient-potential" placeholder="Potential Energy"
+                            onkeypress="return onlyNumberKeyp1(event)" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Mass</label>
+                        <input type="text" class="form-control" id="recipient-massp"
+                            placeholder="Enter Mass" onkeypress="return onlyNumberKeyp1(event)" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Accelerations</label>
+                        <input type="text" class="form-control" id="recipient-accelerationp"
+                            placeholder="Enter Accelerations" onkeypress="return onlyNumberKeyp1(event)" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Height</label>
+                        <input type="text" class="form-control" id="recipient-height"
+                            placeholder="Enter Height" onkeypress="return onlyNumberKeyp1(event)" />
+                    </div>
+                </form>
+                <p id="error_msg1PE" style="font-size: 12px;color: red;"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="formula2_caluclate()">Calculate</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="formula3Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="font-family: 'Abhaya Libre';font-size: 28px;">
+                    E<sub>0</sub>=mc<sup>2</sup></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p style="font-size: 12px;color: red;">Standard S.I Unit only (Any of the three input are required)</p>
+                <form>
+
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Rest Energy</label>
+                        <input type="text" class="form-control" id="rest-energy" placeholder="Rest Energy" disabled />
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Mass</label>
+                        <input type="text" class="form-control" id="rest-mass" placeholder="Enter Mass"
+                            onkeypress="return onlyNumberKeyr1(event)" />
+                    </div>
+                    <strong style="font-size: 14px;color: rgb(14, 216, 138);"> Speed of light (c)=29,97,92,458 m/s (≈ 3 x
+                        10<sup>8</sup>)</strong>
+
+                </form>
+                <p id="error_msg1RE" style="font-size: 12px;color: red;"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="formula3_caluclate()">Calculate</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="length1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle" style="font-family: 'Amita';font-size: 22px;">Length
+                </h5>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12 unit">
+                        <label for="quantity">Quantity :</label>
+                        <input type="text" class="form-control" id="quantity"
+                            onkeypress="return onlyNumberKey4(event)" />
+                        <p id="error_msg1" style="font-size: 12px;color: red;"></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="units">From :</label>
+                        <select id="fromunits" value="units" class="UnitInput form-control">
+                            <option value="cm">Centimetre</option>
+                            <option value="ft">Feet</option>
+                            <option value="in">Inch</option>
+                            <option value="mt">Metre</option>
+                            <option value="km">Kilometre</option>
+                            <option value="ml">Miles</option>
+                            <option value="nl">Nauticle Miles</option>
+                            <option value="yd">Yard</option>
+                            <option value="mm">Millimetre</option>
+                            <option value="nm">Nanometre</option>
+                            <option value="micron">Micrometre</option>
+                        </select>
+                        <p id="error_msg2" style="font-size: 12px;color: red;"></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="units">To :</label>
+                        <select id="tounits" value="units" class="UnitInput form-control">
+                            <option value="cm">Centimetre</option>
+                            <option value="ft">Feet</option>
+                            <option value="in">Inch</option>
+                            <option value="mt">Metre</option>
+                            <option value="km">Kilometre</option>
+                            <option value="ml">Miles</option>
+                            <option value="nl">Nauticle Miles</option>
+                            <option value="yd">Yard</option>
+                            <option value="mm">Millimetre</option>
+                            <option value="nm">Nanometre</option>
+                            <option value="micron">Micrometre</option>
+                        </select>
+                        <p id="error_msg3" style="font-size: 12px;color: red;"></p>
+                    </div>
+                </div>
+                <p id="success_msg1" style="font-size: 16px;color: rgb(9, 134, 36);font-weight: 500;"></p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" title="swap" onclick="swap_length()">Swap</button>
+                <button type="button" class="btn btn-dark" data-dismiss="modal" title="close">Close</button>
+                <button type="button" class="btn btn-primary" title="evaluate"
+                    onclick="lengthConversion()">Convert</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="velocity" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle" style="font-family: 'Amita';font-size: 22px;">
+                    Velocity
+                </h5>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12 unit">
+                        <label for="quantity">Quantity :</label>
+                        <input type="text" class="form-control" id="quantityVelocity"
+                            onkeypress="return NumberOnlyKey(event)" />
+                        <p id="error_msg23" style="font-size: 12px;color: red;"></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="units">From :</label>
+                        <select id="fromvelocity" value="units" class="UnitInput form-control">
+                            <option value="cm/s">cm/s</option>
+                            <option value="m/s">m/s</option>
+                            <option value="km/hr">km/hr</option>
+                            <option value="km/min">km/min</option>
+                            <option value="km/s">km/s</option>
+                            <option value="ft/hr">ft/hr</option>
+                            <option value="ft/s">ft/s</option>
+                            <option value="mch">Mach</option>
+                            <option value="kn">Knot[UK]</option>
+                        </select>
+                        <p id="error_msg24" style="font-size: 12px;color: red;"></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="units">To :</label>
+                        <select id="tovelocity" value="units" class="UnitInput form-control">
+                            <option value="cm/s">cm/s</option>
+                            <option value="m/s">m/s</option>
+                            <option value="km/hr">km/hr</option>
+                            <option value="km/min">km/min</option>
+                            <option value="km/s">km/s</option>
+                            <option value="ft/hr">ft/hr</option>
+                            <option value="ft/s">ft/s</option>
+                            <option value="mch">Mach</option>
+                            <option value="kn">Knot[UK]</option>
+                        </select>
+                        <p id="error_msg25" style="font-size: 12px;color: red;"></p>
+                    </div>
+                </div>
+                <p id="success_msg2" style="font-size: 16px;color: rgb(9, 134, 36);font-weight: 500;"></p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" title="swap" onclick="swap_velocity()">Swap</button>
+                <button type="button" class="btn btn-dark" data-dismiss="modal" title="close">Close</button>
+                <button type="button" class="btn btn-primary" title="evaluate"
+                    onclick="velocityConversion()">Convert</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="acceleration1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle" style="font-family: 'Abhaya Libre';font-size: 28px;">
+                    Acceleration</h5>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12 unit">
+                        <label for="quantity">Quantity :</label>
+                        <input type="text" class="form-control" id="quantityacceleration"
+                            placeholder="Enter Acceleration" onkeypress="return onlyNumberKey6(event)" />
+                        <p id="error_msg13" style="font-size: 12px;color: red;"></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="units">From :</label>
+                        <select id="fromAcceleration" value="units" class="UnitInput form-control">
+                            <option value="m/s²">m/s²</option>
+                            <option value="cm/s²">cm/s²</option>
+                            <option value="ft/s²">ft/s²</option>
+                            <option value="km/h²">km/h²</option>
+                        </select>
+                        <p id="error_msg14" style="font-size: 12px;color: red;"></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="units">To :</label>
+                        <select id="toAcceleration" value="units" class="UnitInput form-control">
+                            <option value="m/s²">m/s²</option>
+                            <option value="cm/s²">cm/s²</option>
+                            <option value="ft/s²">ft/s²</option>
+                            <option value="km/h²">km/h²</option>
+                        </select>
+                        <p id="error_msg15" style="font-size: 12px;color: red;"></p>
+                    </div>
+                </div>
+                <p id="success_msg5" style="font-weight: 500;font-size: 14px;color: rgb(31, 112, 7);"></p>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning swap" title="swap"
+                    onclick="swap_acceleration()">Swap</button>
+                <button type="button" class="btn btn-dark" data-dismiss="modal" title="close">Close</button>
+                <button type="button" class="btn btn-primary" title="convert"
+                    onclick="accelerationConversion()">Convert</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

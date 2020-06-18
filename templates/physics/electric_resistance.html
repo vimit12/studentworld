@@ -1,0 +1,437 @@
+{%extends 'physics/base.html' %}
+{% load static %}
+{% block title%}Kinematics Formula{% endblock %}
+
+{% block script %}
+<!-- <script type="text/javascript" src="{% static "js/physics/resistance.js" %}"></script> -->
+<script type="text/javascript" src="{% static "js/physics/resistance.min.js" %}"></script>
+<script type="text/javascript" src="{% static "js/convert.js" %}"></script>
+<!-- <script type="text/javascript" src="{% static "js/physics/buoyancy.js" %}"></script> -->
+<script type="text/javascript" src="{% static "js/physics/buoyancy.min.js" %}"></script>
+<!-- <script type="text/javascript" src="{% static "js/physics/mass.js" %}"></script> -->
+<script type="text/javascript" src="{% static "js/physics/mass.min.js" %}"></script>
+{% endblock %}
+
+{% block physics_body%}
+<div class="container-fluid">
+    <h2 align="center" style="font-family: 'Abhaya Libre';font-size: 36px;">What is Electrical resistance?</h2><hr>
+    <p>
+    The electrical resistance of an object is a measure of its opposition to the flow of electric current. The inverse
+    quantity is electrical conductance, and is the ease with which an electric current passes. Electrical resistance
+    shares some conceptual parallels with the notion of mechanical friction. The SI unit of electrical resistance is the
+    ohm (Ω), while electrical conductance is measured in siemens (S).<br><br>
+
+    The resistance of an object depends in large part on the material it is made of. Objects made of electrical
+    insulators like rubber tend to have very high resistance and low conductivity, while objects made of electrical
+    conductors like metals tend to have very low resistance and high conductivity. This relationship is quantified by
+    resistivity or conductivity. The nature of a material is not the only factor in resistance and conductance, however:
+    it also depends on the size and shape of an object because these properties are extensive rather than intensive. For
+    example, a wire's resistance is higher if it is long and thin, and lower if it is short and thick. All objects
+    resist electrical current, except for superconductors, which have a resistance of zero.<br><br>
+
+    The resistance R of an object is defined as the ratio of voltage V across it to current I through it, while the
+    conductance G is the reciprocal:<br>
+
+    <strong style="padding-left: 2em;">R = V/I</strong> , <br>
+    <strong style="padding-left: 2em;">G = I/V = 1/R</strong> <br>
+
+    For a wide variety of materials and conditions, V and I are directly proportional to each other, and therefore R and
+    G are constants (although they will depend on the size and shape of the object, the material it is made of, and
+    other factors like temperature or strain). This proportionality is called Ohm's law, and materials that satisfy it
+    are called ohmic materials.
+    
+        <hr>
+    </p>
+    <div class="row">
+        <div class="col-sm-4">
+            <button style="margin:0em 1em 1em 1em;color: black;" class="btn btn-outline-warning" type="submit"
+                data-toggle="modal" data-target="#areaconv">Area Conversion</button>
+        </div>
+        <div class="col-sm-4">
+            <button style="margin:0em 1em 1em 1em;color: black;" class="btn btn-outline-warning" type="submit"
+                data-toggle="modal" data-target="#lengthconv">Displacement Conversion</button>
+        </div>
+        <div class="col-sm-4">
+            <button style="margin:0em 1em 1em 1em;color: black;" class="btn btn-outline-warning" type="submit"
+                data-toggle="modal" data-target="#densityconv">Density Conversion</button>
+        </div>
+    </div>
+    <hr>
+    <h2 style="font-family: 'Abhaya Libre';font-size: 36px;">Conductors and resistors</h2>
+    <p>
+        Substances in which electricity can flow are called conductors. A piece of conducting material of a particular
+        resistance meant for use in a circuit is called a resistor. Conductors are made of high-conductivity materials
+        such as metals, in particular copper and aluminium. Resistors, on the other hand, are made of a wide variety of
+        materials depending on factors such as the desired resistance, amount of energy that it needs to dissipate,
+        precision, and costs.
+
+        <div align="center">
+            <img style="width: 60%;" src ="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Metal_film_resistor.jpg/375px-Metal_film_resistor.jpg" alt="">
+            <p>A 75 Ω resistor, as identified by its electronic color code (violet–green–black–gold–red). An ohmmeter
+                could be used to verify this value.</p>
+        </div><br>
+
+        The resistance of a given object depends primarily on two factors: What material it is made of, and its shape.
+        For a given material, the resistance is inversely proportional to the cross-sectional area; for example, a thick
+        copper wire has lower resistance than an otherwise-identical thin copper wire. Also, for a given material, the
+        resistance is proportional to the length; for example, a long copper wire has higher resistance than an
+        otherwise-identical short copper wire. The resistance R and conductance G of a conductor of uniform cross
+        section, therefore, can be computed as : <br>
+
+        <div align="center">
+            <img style="width: 60%;" src ="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Resistivity_geometry.png/330px-Resistivity_geometry.png"
+                alt="">
+            <p>A piece of resistive material with electrical contacts on both ends.</p>
+        </div><br>
+
+        <img style="padding-left: 2em;"
+            style="width: 60%;" src ="https://wikimedia.org/api/rest_v1/media/math/render/svg/0767ce67ce9b8c9042fe1b7481c84ba5eec2481b"
+            alt=""><button style="margin:0em 1em 1em 1em;color: black;font-family: 'Clicker Script';font-size: 20px;"
+                class="btn btn-outline-warning" type="submit"
+                data-toggle="modal" data-target="#electricformula1"><strong> R = ρ.l/A</strong></button>
+                <button style="margin:0em 1em 1em 1em;color: black;font-family: 'Clicker Script';font-size: 20px;"
+                    class="btn btn-outline-warning" type="submit"
+                    data-toggle="modal" data-target="#electricformula2"> <strong>G = σ.A/l</strong> </button>
+        <hr>
+    </p>
+    <h2 style="font-family: 'Abhaya Libre';font-size: 36px;">Series circuits</h2>
+    <p>
+        Series circuits are sometimes referred to as current-coupled or daisy chain-coupled. The current in a series
+        circuit goes through every component in the circuit. Therefore, all of the components in a series connection
+        carry the same current.<br><br>
+
+        A series circuit has only one path in which its current can flow. Opening or breaking a series circuit at any
+        point causes the entire circuit to "open" or stop operating. For example, if even one of the light bulbs in an
+        older-style string of Christmas tree lights burns out or is removed, the entire string becomes inoperable until
+        the bulb is replaced.
+    </p><br>
+    <h5 style="font-family: 'Abhaya Libre';font-size: 20px;"> <strong> Current :</strong></h5>
+    <div >
+        <img style="width: 60%;" src ="https://wikimedia.org/api/rest_v1/media/math/render/svg/fc07b5aa227736f0035e8e33848e09b38c386b7e"
+            alt="">
+        <p>In a series circuit, the current is the same for all of the elements.</p>
+    </div><br>
+    <h5 style="font-family: 'Abhaya Libre';font-size: 20px;"> <strong> Voltage :</strong></h5>
+    <div>
+        <img style="width: 60%;" src ="https://wikimedia.org/api/rest_v1/media/math/render/svg/3d69e95b5bf5bb8803bd0b9467ab038abcd49bda"
+            alt="">
+        <p>In a series circuit, the voltage is the sum of the voltage drops of the individual components (resistance
+            units).</p>
+    </div><br>
+    <h5 style="font-family: 'Abhaya Libre';font-size: 20px;"> <strong> Resistance units :</strong></h5>
+    <div>
+        <img style="width: 60%;" src ="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Resistors_in_series.svg/585px-Resistors_in_series.svg.png" alt="">
+        <p>The total resistance of resistance units in series is equal to the sum of their individual resistances:</p>
+        <img style="width: 60%;" src ="https://wikimedia.org/api/rest_v1/media/math/render/svg/82b747841991b7aefa8f70533f397d835b608df6"
+            alt="">
+        <p>R<sub>s</sub>=>Resistance in series</p>
+    </div>
+    <hr>
+    <h2 style="font-family: 'Abhaya Libre';font-size: 36px;">Parallel circuits</h2>
+    <p>
+        If two or more components are connected in parallel, they have the same difference of potential (voltage) across
+        their ends. The potential differences across the components are the same in magnitude, and they also have
+        identical polarities. The same voltage is applied to all circuit components connected in parallel. The total
+        current is the sum of the currents through the individual components, in accordance with Kirchhoff's current
+        law.
+    </p><br>
+
+    <h5 style="font-family: 'Abhaya Libre';font-size: 20px;"> <strong> Current :</strong></h5>
+    <div>
+        <img style="width: 60%;" src ="https://wikimedia.org/api/rest_v1/media/math/render/svg/71129af1edec429f99985e53221bbf937c1aec91"
+            alt="">
+        <p>The current in each individual resistor is found by Ohm's law. Factoring out the voltage gives.</p>
+    </div><br>
+    <h5 style="font-family: 'Abhaya Libre';font-size: 20px;"> <strong> Voltage :</strong></h5>
+    <div>
+        <img style="width: 60%;" src ="https://wikimedia.org/api/rest_v1/media/math/render/svg/876bbe8187697e7a4fe9e5e75b445377d1dfa802"
+            alt="">
+        <p>In a parallel circuit, the voltage is the same for all elements.</p>
+    </div><br>
+    <h5 style="font-family: 'Abhaya Libre';font-size: 20px;"> <strong> Resistance units :</strong></h5>
+    <div>
+        <img style="width: 60%;" src ="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Resistors_in_parallel.svg/452px-Resistors_in_parallel.svg.png"
+            alt="">
+        <p>To find the total resistance of all components, add the reciprocals of the resistances R<sub>i</sub> of each component and take the reciprocal of the sum. Total resistance will always be less than
+            the value of the smallest resistance:</p>
+        <img style="width: 60%;" src ="https://wikimedia.org/api/rest_v1/media/math/render/svg/0a7f16d8b2ce64bb742195754fd677aa9e032aae"
+            alt="">
+    </div>
+
+</div>
+
+<div class="modal fade" id="electricformula1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="font-family: 'Abhaya Libre';font-size: 28px;">
+                    <strong> R = ρ.l/A</strong></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p style="font-size: 12px;color: red;">Standard S.I Unit only (Any of the three input are required)</p>
+                <form>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Resistance</label>
+                        <input type="text" class="form-control" id="resistance1"
+                            placeholder="Enter Resistance" onkeypress="return onlyNumberKeyER1(event)" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Density</label>
+                        <input type="text" class="form-control" id="density" placeholder="Enter Density"
+                            onkeypress="return onlyNumberKeyER1(event)" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Length</label>
+                        <input type="text" class="form-control" id="length" placeholder="Enter Length"
+                            onkeypress="return onlyNumberKeyER1(event)" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Area</label>
+                        <input type="text" class="form-control" id="area" placeholder="Enter Area"
+                            onkeypress="return onlyNumberKeyER1(event)" />
+                    </div>
+                </form>
+                <p id="error_msgER5" style="font-size: 12px;color: red;"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="formulaER1()">Calculate</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="electricformula2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="font-family: 'Abhaya Libre';font-size: 28px;">
+                    <strong> G = σ.A/l</strong></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p style="font-size: 12px;color: red;">Standard S.I Unit only (Any of the three input are required)</p>
+                <form>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Conductance</label>
+                        <input type="text" class="form-control" id="conductance" placeholder="Enter Conductance"
+                            onkeypress="return onlyNumberKeyER2(event)" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Electrical Conductivity(σ)</label>
+                        <input type="text" class="form-control" id="cond"
+                            placeholder="Enter Electrical Conductivity(σ)"
+                            onkeypress="return onlyNumberKeyER2(event)" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Area</label>
+                        <input type="text" class="form-control" id="area1" placeholder="Enter Area"
+                            onkeypress="return onlyNumberKeyER2(event)" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Length</label>
+                        <input type="text" class="form-control" id="length1" placeholder="Enter Length"
+                            onkeypress="return onlyNumberKeyER2(event)" />
+                    </div>
+                    
+                </form>
+                <p id="error_msgER6" style="font-size: 12px;color: red;"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="formulaER2()">Calculate</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="lengthconv" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle" style="font-family: 'Amita';font-size: 22px;">Length
+                </h5>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12 unit">
+                        <label for="quantity">Quantity :</label>
+                        <input type="text" class="form-control" id="quantity"
+                            onkeypress="return onlyNumberKey4(event)" />
+                        <p id="error_msg1" style="font-size: 12px;color: red;"></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="units">From :</label>
+                        <select id="fromunits" value="units" class="UnitInput form-control">
+                            <option value="cm">Centimetre</option>
+                            <option value="ft">Feet</option>
+                            <option value="in">Inch</option>
+                            <option value="mt">Metre</option>
+                            <option value="km">Kilometre</option>
+                            <option value="ml">Miles</option>
+                            <option value="nl">Nauticle Miles</option>
+                            <option value="yd">Yard</option>
+                            <option value="mm">Millimetre</option>
+                            <option value="nm">Nanometre</option>
+                            <option value="micron">Micrometre</option>
+                        </select>
+                        <p id="error_msg2" style="font-size: 12px;color: red;"></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="units">To :</label>
+                        <select id="tounits" value="units" class="UnitInput form-control">
+                            <option value="cm">Centimetre</option>
+                            <option value="ft">Feet</option>
+                            <option value="in">Inch</option>
+                            <option value="mt">Metre</option>
+                            <option value="km">Kilometre</option>
+                            <option value="ml">Miles</option>
+                            <option value="nl">Nauticle Miles</option>
+                            <option value="yd">Yard</option>
+                            <option value="mm">Millimetre</option>
+                            <option value="nm">Nanometre</option>
+                            <option value="micron">Micrometre</option>
+                        </select>
+                        <p id="error_msg3" style="font-size: 12px;color: red;"></p>
+                    </div>
+                </div>
+                <p id="success_msg1" style="font-size: 16px;color: rgb(9, 134, 36);font-weight: 500;"></p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" title="swap" onclick="swap_length()">Swap</button>
+                <button type="button" class="btn btn-dark" data-dismiss="modal" title="close">Close</button>
+                <button type="button" class="btn btn-primary" title="evaluate"
+                    onclick="lengthConversion()">Convert</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="areaconv" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle" style="font-family: 'Abhaya Libre';font-size: 28px;">
+                    Area</h5>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12 unit">
+                        <label for="quantity">Quantity :</label>
+                        <input type="text" class="form-control" id="quantityarea" placeholder="Enter Area"
+                            onkeypress="return onlyNumberKeyArea(event)" />
+                        <p id="error_msgArea1" style="padding-top: 1em;font-size: 12px;color: red;"></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="units">From :</label>
+                        <select id="fromArea" value="units" class="UnitInput form-control">
+                            <option value="m">m²</option>
+                            <option value="cm">cm²</option>
+                            <option value="km">km²</option>
+                            <option value="hec">hectare</option>
+                            <option value="ac">acre</option>
+                            <option value="ft">ft²</option>
+                            <option value="in">in²</option>
+                        </select>
+                        <p id="error_msgArea2" style="font-size: 12px;color: red;"></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="units">To :</label>
+                        <select id="toArea" value="units" class="UnitInput form-control">
+                            <option value="m">m²</option>
+                            <option value="cm">cm²</option>
+                            <option value="km">km²</option>
+                            <option value="hec">hectare</option>
+                            <option value="ac">acre</option>
+                            <option value="ft">ft²</option>
+                            <option value="in">in²</option>
+                        </select>
+                        <p id="error_msgArea3" style="font-size: 12px;color: red;"></p>
+                    </div>
+                </div>
+                <p id="success_msgArea" style="font-weight: 500;font-size: 14px;color: rgb(31, 112, 7);"></p>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning swap" title="swap" onclick="swap_area()">Swap</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" title="close">Close</button>
+                <button type="button" class="btn btn-primary" title="convert"
+                    onclick="areaConversion()">Convert</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="densityconv" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle" style="font-family: 'Abhaya Libre';font-size: 28px;">
+                    Density</h5>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12 unit">
+                        <label for="quantity">Quantity :</label>
+                        <input type="text" class="form-control" id="quantityDensity" placeholder="Enter Density"
+                            onkeypress="return onlyNumberKey4(event)" />
+                        <p id="error_msg7" style="font-size: 12px;color: red;"></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="units">From :</label>
+                        <select id="fromdensity" value="units" class="UnitInput form-control">
+                            <option value="gm/cm³">gm/cm³</option>
+                            <option value="gm/liter">gm/liter</option>
+                            <option value="gm/m³">gm/m³</option>
+                            <option value="kg/cm³">kg/cm³</option>
+                            <option value="kg/liter">kg/liter</option>
+                            <option value="kg/m³">kg/m³</option>
+                            <option value="pounds/foot³">pounds/foot³</option>
+                            <option value="pounds/inch³">pounds/inch³</option>
+                        </select>
+                        <p id="error_msg8" style="font-size: 12px;color: red;"></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="units">To :</label>
+                        <select id="todensity" value="units" class="UnitInput form-control">
+                            <option value="gm/cm³">gm/cm³</option>
+                            <option value="gm/liter">gm/liter</option>
+                            <option value="gm/m³">gm/m³</option>
+                            <option value="kg/cm³">kg/cm³</option>
+                            <option value="kg/liter">kg/liter</option>
+                            <option value="kg/m³">kg/m³</option>
+                            <option value="pounds/foot³">pounds/foot³</option>
+                            <option value="pounds/inch³">pounds/inch³</option>
+                        </select>
+                        <p id="error_msg9" style="font-size: 12px;color: red;"></p>
+                    </div>
+                </div>
+                <p id="success_msg3" style="font-weight: 500;font-size: 14px;color: rgb(31, 112, 7);"></p>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning swap" title="swap" onclick="swap_density()">Swap</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" title="close">Close</button>
+                <button type="button" class="btn btn-primary" title="convert"
+                    onclick="densityConversion()">Convert</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

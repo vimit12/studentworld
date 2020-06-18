@@ -1,0 +1,819 @@
+{% load static %}
+
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    
+    <!--====== Title ======-->
+    <title>Students World</title>
+    
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="{% static 'assets/images/favicon.png' %}" type="image/png">
+        
+    <!--====== Magnific Popup CSS ======-->
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+        
+    <!--====== Slick CSS ======-->
+    <link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">
+        
+    <!--====== Line Icons CSS ======-->
+    <link rel="stylesheet" href="{% static 'assets/css/LineIcons.css">
+        
+    <!--====== Bootstrap CSS ======-->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    
+    <!--====== Default CSS ======-->
+    <link rel="stylesheet" href="{% static 'assets/css/default.css' %}">
+    
+    <!--====== Style CSS ======-->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+
+    <script type="text/javascript" src="{% static 'js/titles.js' %}"></script>
+    
+</head>
+
+<body>
+    <!--====== PRELOADER PART START ======-->
+
+    <div class="preloader">
+        <div class="loader">
+            <div class="ytp-spinner">
+                <div class="ytp-spinner-container">
+                    <div class="ytp-spinner-rotator">
+                        <div class="ytp-spinner-left">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                        <div class="ytp-spinner-right">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--====== PRELOADER PART ENDS ======-->
+    
+    <!--====== NAVBAR TWO PART START ======-->
+
+    <section class="navbar-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg">
+                       
+                        <a class="navbar-brand" href="#" style="color: black;">
+                            <svg class="bi bi-at" width="2em" height="2em" viewBox="0 0 16 16" fill=""
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            Science
+                            <!-- <img src="{% static 'assets/images/logo.svg' %}"alt="Logo"> -->
+                        </a>
+                        
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTwo" aria-controls="navbarTwo" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="toggler-icon"></span>
+                            <span class="toggler-icon"></span>
+                            <span class="toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse sub-menu-bar" id="navbarTwo">
+                            <ul class="navbar-nav m-auto">
+                                <li class="nav-item active"><a class="page-scroll" href="#home">
+                                    <svg class="bi bi-house-fill" width="1.5em" height="1.5em" viewBox="0 0 16 16"
+                                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M8 3.293l6 6V13.5a1.5 1.5 0 01-1.5 1.5h-9A1.5 1.5 0 012 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 01.5-.5h1a.5.5 0 01.5.5z"
+                                            clip-rule="evenodd" />
+                                        <path fill-rule="evenodd"
+                                            d="M7.293 1.5a1 1 0 011.414 0l6.647 6.646a.5.5 0 01-.708.708L8 2.207 1.354 8.854a.5.5 0 11-.708-.708L7.293 1.5z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </a></li>
+                                <li class="nav-item"><a class="page-scroll" href="#services">Services</a></li>
+                                <!-- <li class="nav-item"><a class="page-scroll" href="#portfolio">Portfolio</a></li> -->
+                                <!-- <li class="nav-item"><a class="page-scroll" href="#pricing">Pricing</a></li> -->
+                                <li class="nav-item"><a class="page-scroll" href="#about">About</a></li>
+                                <li class="nav-item"><a class="page-scroll" href="#team">Developer</a></li>
+                                <li class="nav-item"><a class="page-scroll" href="#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="navbar-btn d-none d-sm-inline-block">
+                            <ul class="nav navbar-nav navbar-right">
+                                {% if user.is_authenticated %}
+                                <li><a href="{% url 'profile' %}" style="0.5em 0.5em 0.5em 0.5em;color: black;"
+                                        title="Profile"><svg class="bi bi-person-square" width="1.5em" height="1.5em"
+                                            viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd"
+                                                d="M14 1H2a1 1 0 00-1 1v12a1 1 0 001 1h12a1 1 0 001-1V2a1 1 0 00-1-1zM2 0a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V2a2 2 0 00-2-2H2z"
+                                                clip-rule="evenodd" />
+                                            <path fill-rule="evenodd"
+                                                d="M2 15v-1c0-1 1-4 6-4s6 3 6 4v1H2zm6-6a3 3 0 100-6 3 3 0 000 6z"
+                                                clip-rule="evenodd" />
+                                        </svg><span class="nav_style profile" style="margin: 0 0.5em 0 0.5em;">Hi!
+                                            {{request.user}}</span></a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </nav> <!-- navbar -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+    <!--====== NAVBAR TWO PART ENDS ======-->
+    
+    <!--====== SLIDER PART START ======-->
+
+    <section id="home" class="slider_area">
+        <div id="carouselThree" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselThree" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselThree" data-slide-to="1"></li>
+                <li data-target="#carouselThree" data-slide-to="2"></li>
+            </ol>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="slider-content">
+                                    <h1 class="title">Students World</h1>
+                                    <p class="text">Never. Stop. Questioning.</p>
+                                    <ul class="slider-btn rounded-buttons">
+                                        <li><a class="main-btn rounded-one"
+                                                href="{% url 'basicalculator' %}">Calculator</a>
+                                        </li>
+                                        <li><a class="main-btn rounded-two" href="{% url 'draw' %}">Graph</a></li>
+                                        <li><a class="main-btn rounded-one" href="{% url 'math' %}">Math</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div> <!-- row -->
+                    </div> <!-- container -->
+                    <div class="slider-image-box d-none d-lg-flex align-items-end">
+                        <div class="slider-image">
+                            <img src="{% static 'assets/images/slider/1.png' %}" alt="Hero">
+                        </div> <!-- slider-imgae -->
+                    </div> <!-- slider-imgae box -->
+                </div> <!-- carousel-item -->
+
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="slider-content">
+                                    <h1 class="title">Crafted for Science</h1>
+                                    <p class="text">Conserve Resources, Sustain Life, Educate Human To Be
+                                        Technologically Progressive.</p>
+                                    <ul class="slider-btn rounded-buttons">
+                                        <li><a class="main-btn rounded-one" href="
+                                                {% url 'phy-home' %}">Physics</a></li>
+                                        <li><a class="main-btn rounded-two" href="
+                                                {% url 'chem-home' %}">Chemistry</a></li>
+                                        <li><a class="main-btn rounded-one" href="{% url 'bio-home' %}">Biology</a>
+                                        </li>
+                                    </ul>
+                                </div> <!-- slider-content -->
+                            </div>
+                        </div> <!-- row -->
+                    </div> <!-- container -->
+                    <div class="slider-image-box d-none d-lg-flex align-items-end">
+                        <div class="slider-image">
+                            <img src="{% static 'assets/images/slider/2.png' %}" alt="Hero">
+                        </div> <!-- slider-imgae -->
+                    </div> <!-- slider-imgae box -->
+                </div> <!-- carousel-item -->
+
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="slider-content">
+                                    <h1 class="title">Student's Blogs</h1>
+                                    <p class="text">Apple: "Think Different! Write Different!."</p>
+                                    <ul class="slider-btn rounded-buttons">
+                                        <li><a class="main-btn rounded-one" href="{% url 'blog-home' %}">Blog</a></li>
+                                        <li><a class="main-btn rounded-two" href="{% url 'kids-section' %}">Kid's
+                                                Section</a></li>
+                                    </ul>
+                                </div> <!-- slider-content -->
+                            </div>
+                        </div> <!-- row -->
+                    </div> <!-- container -->
+                    <div class="slider-image-box d-none d-lg-flex align-items-end">
+                        <div class="slider-image">
+                            <img src="{% static 'assets/images/slider/3.png' %}" alt="Hero">
+                        </div> <!-- slider-imgae -->
+                    </div> <!-- slider-imgae box -->
+                </div> <!-- carousel-item -->
+            </div>
+
+            <a class="carousel-control-prev" href="#carouselThree" role="button" data-slide="prev">
+                <svg class="bi bi-arrow-left-short" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M7.854 4.646a.5.5 0 010 .708L5.207 8l2.647 2.646a.5.5 0 01-.708.708l-3-3a.5.5 0 010-.708l3-3a.5.5 0 01.708 0z"
+                        clip-rule="evenodd" />
+                    <path fill-rule="evenodd" d="M4.5 8a.5.5 0 01.5-.5h6.5a.5.5 0 010 1H5a.5.5 0 01-.5-.5z"
+                        clip-rule="evenodd" />
+                </svg>
+            </a>
+            <a class="carousel-control-next" href="#carouselThree" role="button" data-slide="next">
+                <svg class="bi bi-arrow-right-short" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M8.146 4.646a.5.5 0 01.708 0l3 3a.5.5 0 010 .708l-3 3a.5.5 0 01-.708-.708L10.793 8 8.146 5.354a.5.5 0 010-.708z"
+                        clip-rule="evenodd" />
+                    <path fill-rule="evenodd" d="M4 8a.5.5 0 01.5-.5H11a.5.5 0 010 1H4.5A.5.5 0 014 8z"
+                        clip-rule="evenodd" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!--====== SLIDER PART ENDS ======-->
+    
+    <!--====== FEATRES TWO PART START ======-->
+
+    <section id="services" class="features-area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-10">
+                    <div class="section-title text-center pb-10">
+                        <h3 class="title">Our Services</h3>
+                        <p class="text">Some other services are like Time Calculator, Leap Year Calulator, and Area Calculator!</p>
+                    </div> <!-- row -->
+                </div>
+            </div> <!-- row -->
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-7 col-sm-9">
+                    <div class="single-features mt-40">
+                        <div class="features-title-icon d-flex justify-content-between">
+                            <h4 class="features-title"><a href="#">Time Frame Calculator</a></h4>
+                            <svg class="bi bi-calendar-fill" width="6em" height="6em" viewBox="0 0 16 16"
+                                fill="blue" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 2a2 2 0 012-2h12a2 2 0 012 2H0z" />
+                                <path fill-rule="evenodd"
+                                    d="M0 3h16v11a2 2 0 01-2 2H2a2 2 0 01-2-2V3zm6.5 4a1 1 0 100-2 1 1 0 000 2zm4-1a1 1 0 11-2 0 1 1 0 012 0zm2 1a1 1 0 100-2 1 1 0 000 2zm-8 2a1 1 0 11-2 0 1 1 0 012 0zm2 1a1 1 0 100-2 1 1 0 000 2zm4-1a1 1 0 11-2 0 1 1 0 012 0zm2 1a1 1 0 100-2 1 1 0 000 2zm-8 2a1 1 0 11-2 0 1 1 0 012 0zm2 1a1 1 0 100-2 1 1 0 000 2zm4-1a1 1 0 11-2 0 1 1 0 012 0z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="features-content">
+                            <p class="text">This section calculate time frame between two dates.<br><br></p>
+                           
+                            <a href="" class="features-btn btn-outline-info" style="color: black;" data-toggle="modal" data-target="#exampleModal">LEARN MORE</a>
+                        </div>
+                    </div> <!-- single features -->
+                </div>
+                <!-- time calculator div -->
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <h4 style="font-family: 'Sofia';font-size: 22px; color: #ba5afa;">Time Frame Calculator
+                                </h4>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label"
+                                            style="font-family: 'Almendra Display';font-size: 18px; color: #fc4ebf;">To:</label>
+                                        <input type="date" class="form-control" id="date1" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label"
+                                            style="font-family: 'Almendra Display';font-size: 18px; color: #fc4ebf;">From:</label>
+                                        <input type="date" class="form-control" id="date2" />
+                                    </div>
+                                    <div>
+                                        <p id="error_msg"></p>
+                                        <p style="color: green; padding-top: 1em;" id="success_msg"></p>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-warning" onclick="reset();">Reset</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" onclick="date_val();">Calculate</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- end time calculator -->
+                <div class="col-lg-4 col-md-7 col-sm-9">
+                    <div class="single-features mt-40">
+                        <div class="features-title-icon d-flex justify-content-between">
+                            <h4 class="features-title"><a href="#">Leap Year Calulator</a></h4>
+                            
+                                <svg class="bi bi-calendar" width="6em" height="6em" viewBox="0 0 16 16"
+                                    fill="Green" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M14 0H2a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V2a2 2 0 00-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"
+                                        clip-rule="evenodd" />
+                                    <path fill-rule="evenodd"
+                                        d="M6.5 7a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm-9 3a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm-9 3a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                        </div>
+                        <div class="features-content">
+                            <p class="text">This section calculate leap year of a given year, our calculate all leap year between two year.</p>
+                            <a class="features-btn btn-outline-info" href="#" data-toggle="modal"
+                                data-target="#leapyear"
+                                style="color: black;">LEARN MORE</a>
+                        </div>
+                    </div> <!-- single features -->
+                </div>
+                <!-- leap year calculate -->
+
+                <div class="modal fade" id="leapyear" tabindex="-1" role="dialog" aria-labelledby="leapyearLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <h4 style="font-family: 'Sofia';font-size: 22px; color: #ba5afa;">Find Whether Year is
+                                    Leap or not</h4>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label"
+                                            style="font-family: 'Almendra Display';font-size: 18px; color: #fc4ebf;">Year:</label>
+                                        <input type="text" class="form-control" id="leap"
+                                            onkeypress="return digit_only(this, event);" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label"
+                                            style="font-family: 'Almendra Display';font-size: 18px; color: #fc4ebf;">Start
+                                            Year:</label>
+                                        <input type="text" class="form-control" id="st_leap"
+                                            onkeypress="return digit_only(this, event);" />
+                                        <label for="recipient-name" class="col-form-label"
+                                            style="font-family: 'Almendra Display';font-size: 18px; color: #fc4ebf;">End
+                                            Year:</label>
+                                        <input type="text" class="form-control" id="end_leap"
+                                            onkeypress="return digit_only(this, event);" />
+                                        <textarea class="form-control" rows="5" style="margin-top: 1em;" id="textarea"
+                                            readonly></textarea>
+                                    </div>
+
+                                    <div>
+                                        <p id="error_msg1"></p>
+                                        <p style="color: green; padding-top: 1em;" id="success_msg1"></p>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-warning"
+                                    onclick="reset_leap_year();">Reset</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" onclick="leapyear();">Calculate</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- leap year end -->
+                <div class="col-lg-4 col-md-7 col-sm-9">
+                    <div class="single-features mt-40">
+                        <div class="features-title-icon d-flex justify-content-between">
+                            <h4 class="features-title"><a href="#">Area Calculator</a></h4><br><br>
+                            <svg class="bi bi-crop" width="6em" height="6em" viewBox="0 0 16 16" fill="Red"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M3.5.5A.5.5 0 014 1v13h13a.5.5 0 010 1H3.5a.5.5 0 01-.5-.5V1a.5.5 0 01.5-.5z"
+                                    clip-rule="evenodd" />
+                                <path fill-rule="evenodd"
+                                    d="M.5 3.5A.5.5 0 011 3h2.5a.5.5 0 010 1H1a.5.5 0 01-.5-.5zm5.5 0a.5.5 0 01.5-.5h8a.5.5 0 01.5.5v8a.5.5 0 01-1 0V4H6.5a.5.5 0 01-.5-.5zM14.5 14a.5.5 0 01.5.5V17a.5.5 0 01-1 0v-2.5a.5.5 0 01.5-.5z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="features-content">
+                            <p class="text">This section calculate area and perimeter of different shapes.<br><br></p>
+                            <a class="features-btn btn-outline-info" href="\math" style="color: black;">LEARN MORE</a>
+                        </div>
+                    </div> <!-- single features -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+    <!--====== FEATRES TWO PART ENDS ======-->
+    
+        
+    <!--====== ABOUT PART START ======-->
+
+    <section id="about" class="about-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="faq-content mt-45">
+                        <div class="about-title">
+                            <h6 class="sub-title">A Little More About This Site</h6>
+                            <h4 class="title">Frequently Asked Questions <br> About This Site</h4><br>
+                        </div> <!-- faq title -->
+                        <div class="accordion" id="accordionExample">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <h2 class="mb-0">
+                                        <button class="btn " type="button" data-toggle="collapse"
+                                            data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Kids Section
+                                        </button>
+                                    </h2>
+                                </div>
+
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        This Section Focused on the learning of the kids, it provide interactive buttons for different topics, so that it can inhance learnig at high speed and keeping the interst of kids.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingTwo">
+                                    <h2 class="mb-0">
+                                        <button class="btn collapsed" type="button"
+                                            data-toggle="collapse"
+                                            data-target="#collapseTwo" aria-expanded="false"
+                                            aria-controls="collapseTwo">
+                                            Physics Section
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        This Section Focused on learnig of the Students, it provide all covered topic of Physics with some interative formulas and unit conversions.<br>
+                                        This section also include interative Solar System.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingThree">
+                                    <h2 class="mb-0">
+                                        <button class="btn collapsed" type="button"
+                                            data-toggle="collapse"
+                                            data-target="#collapseThree" aria-expanded="false"
+                                            aria-controls="collapseThree">
+                                            Chemistry Section
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        This Section Focused on learnig of the Students, it provide all covered topic of
+                                        Chemistry with some interative formulas and unit conversions.<br>
+                                        This section also include interative Periodic Table.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header" id="headingFour">
+                                    <h2 class="mb-0">
+                                        <button class="btn collapsed" type="button"
+                                            data-toggle="collapse"
+                                            data-target="#collapseFour" aria-expanded="false"
+                                            aria-controls="collapseFour">
+                                            Biology Section
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        This Section Focused on learnig of the Students, it provide all covered topic of
+                                        Biology with some interative topics and Diagrams.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingFive">
+                                    <h2 class="mb-0">
+                                        <button class="btn collapsed" type="button"
+                                            data-toggle="collapse"
+                                            data-target="#collapseFive" aria-expanded="false"
+                                            aria-controls="collapseFive">
+                                            Maths Section
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        This Section Focused on learnig of the Students, it provide all covered topic of
+                                        Maths with some interative formulas and unit conversions.<br>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingSix">
+                                    <h2 class="mb-0">
+                                        <button class="btn collapsed" type="button"
+                                            data-toggle="collapse"
+                                            data-target="#collapseSix" aria-expanded="false"
+                                            aria-controls="collapseSix">
+                                            Student's Blog
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseSix" class="collapse" aria-labelledby="headingSix"
+                                    data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        A blog is a discussion or informational website
+                                        published on the World Wide Web consisting of discrete, often informal
+                                        diary-style text entries (posts). Posts are generally related to science related stuffs.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- faq content -->
+                </div>
+                <div class="col-lg-7">
+                    <div class="about-image mt-50">
+                        <img src="{% static 'assets/images/sc2.jpg' %}" alt="about">
+                    </div> <!-- faq image -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+    <!--====== ABOUT PART ENDS ======-->
+    
+    <hr>    
+    <!--====== TEAM START ======-->
+
+    <section id="team" class="team-area pt-120 pb-130">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-10">
+                    <div class="section-title text-center pb-30">
+                        <h3 class="title">Meet The Developer</h3>
+                        <p class="text">Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!</p>
+                    </div> <!-- section title -->
+                </div>
+            </div> <!-- row -->
+            <div class="row">
+                <div class="col-lg-4 col-sm-6">
+                    <div class="team-style-eleven text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                        <!-- <div class="team-image">
+                            <img src="{% static 'assets/images/team-1.jpg' %}" alt="Team">
+                        </div>
+                        <div class="team-content">
+                            <div class="team-social">
+                                <ul class="social">
+                                    <li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
+                                    <li><a href="#"><i class="lni lni-twitter-original"></i></a></li>
+                                    <li><a href="#"><i class="lni lni-linkedin-original"></i></a></li>
+                                    <li><a href="#"><i class="lni lni-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                            <h4 class="team-name"><a href="#">Jeffery Riley</a></h4>
+                            <span class="sub-title">Art Director</span>
+                        </div> -->
+                    </div> <!-- single team -->
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="team-style-eleven text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                        <div class="team-image">
+                            <img src="{% static 'assets/images/one.jpg' %}" alt="Team">
+                              
+
+                        </div>
+                        <div class="team-content">
+                            <div class="team-social">
+                                <ul class="social">
+                                    <li><a href="https://www.facebook.com/vimit1/" class="fa fa-facebook"></a></li>
+                                    <li><a href="https://twitter.com/pihu1212/" class="fa fa-twitter"></a></li>
+                                    <li><a href="https://www.linkedin.com/in/vimit-k-539028159/"
+                                            class="fa fa-linkedin"></a></li>
+                                </ul>
+                            </div>
+                            <h4 class="team-name"><a href="#">Vimit</a></h4>
+                            
+                            <span class="sub-title">Web Developer</span>
+                        </div>
+                    </div> <!-- single team -->
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="team-style-eleven text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                        <!-- <div class="team-image">
+                            <img src="{% static 'assets/images/team-3.jpg' %}" alt="Team">
+                        </div>
+                        <div class="team-content">
+                            <div class="team-social">
+                                <ul class="social">
+                                    <li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
+                                    <li><a href="#"><i class="lni lni-twitter-original"></i></a></li>
+                                    <li><a href="#"><i class="lni lni-linkedin-original"></i></a></li>
+                                    <li><a href="#"><i class="lni lni-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                            <h4 class="team-name"><a href="#">Mark A. Parker</a></h4>
+                            <span class="sub-title">UX Designer</span>
+                        </div> -->
+                    </div> <!-- single team -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+    <!--====== TEAM  ENDS ======-->
+    
+    <!--====== CONTACT PART START ======-->
+
+    <section id="contact" class="contact-area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-10">
+                    <div class="section-title text-center pb-30">
+                        <h3 class="title">Contact</h3>
+                        <p class="text">Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!</p>
+                    </div> <!-- section title -->
+                </div>
+            </div> <!-- row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="contact-map mt-30">
+                        <iframe id="gmap_canvas"
+                            src="https://maps.google.com/maps?q=Noida&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                            frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    </div> <!-- row -->
+                </div>
+            </div> <!-- row -->
+            <div class="contact-info pt-30">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-contact-info contact-color-1 mt-30 d-flex ">
+                            <div class="contact-info-icon">
+                                <i class="lni lni-map-marker"></i>
+                            </div>
+                            <div class="contact-info-content media-body">
+                                <p class="text"> Sector 71, Shiv Shakti Apartment<br>Noida.</p>
+                            </div>
+                        </div> <!-- single contact info -->
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-contact-info contact-color-2 mt-30 d-flex ">
+                            <div class="contact-info-icon">
+                                <i class="lni lni-envelope"></i>
+                            </div>
+                            <div class="contact-info-content media-body">
+                                <p class="text">pihu1212@gmail.com</p>
+                                <p class="text">pihu1212@hotmail.com</p>
+                            </div>
+                        </div> <!-- single contact info -->
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-contact-info contact-color-3 mt-30 d-flex ">
+                            <div class="contact-info-icon">
+                                <i class="lni lni-phone"></i>
+                            </div>
+                            <div class="contact-info-content media-body">
+                                <p class="text">+91-99715-72155</p>
+                                <p class="text">+91-79852-49689</p>
+                            </div>
+                        </div> <!-- single contact info -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- contact info -->
+    
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+    <!--====== CONTACT PART ENDS ======-->
+    
+    <!--====== FOOTER PART START ======-->
+
+    <section class="footer-area footer-dark">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="footer-logo text-center">
+                        <a class="mt-30" href="/"><img src="{% static 'assets/images/logo.svg' %}"
+                                alt="Logo"></a>
+                    </div> <!-- footer logo -->
+                    <ul class="social text-center mt-60">
+                        <li><a href="https://www.facebook.com/vimit1/"><i class="fa fa-facebook-official"></i></a></li>
+                        <li><a href="https://twitter.com/pihu1212/"><i class="fa fa-twitter-square"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/vimit-k-539028159/"><i
+                                    class="fa fa-linkedin-square"></i></a></li>
+                    </ul> <!-- social -->
+                    <div class="footer-support text-center">
+                        <span class="number">+91-99715-72155</span>
+                        <span class="mail">pihu1212@gmail.com</span>
+                        <span class="mail">pihu1212@hotmail.com</span>
+                    </div>
+                    <div class="footer-support text-center">
+                        <a href="email/" class="btn btn-outline-warning" style="color: cornsilk;">Write to Us!!</a>
+                    </div>
+                    <div class="copyright text-center mt-35">
+                        <footer class="blockquote-footer" style='font-size:16px;'>Copyright &copy; {{year}} All Rights
+                            Reserved by <cite title="Source Title">Vimit</cite></footer>
+                    </div> <!--  copyright -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+    <!--====== FOOTER PART ENDS ======-->
+    
+    <!--====== BACK TOP TOP PART START ======-->
+
+    <a href="#" class="back-to-top" title="Top"><svg class="lni lni-chevron-up" width=" 1em" height="1em" viewBox="0 0 16 16"
+            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+                d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z"
+                clip-rule="evenodd" />
+        </svg></a>
+
+    <!--====== BACK TOP TOP PART ENDS ======-->    
+
+    <!--====== PART START ======-->
+
+<!--
+    <section class="">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+-->
+
+    <!--====== PART ENDS ======-->
+
+
+
+
+    <!--====== Jquery js ======-->
+    <script src="{% static 'assets/js/vendor/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendor/modernizr-3.7.1.min.js' %}"></script>
+    
+    <!--====== Bootstrap js ======-->
+    <script src="{% static 'assets/js/popper.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    
+    <!--====== Slick js ======-->
+    <script src="{% static 'assets/js/slick.min.js' %}"></script>
+    
+    <!--====== Magnific Popup js ======-->
+    <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+    
+    <!--====== Ajax Contact js ======-->
+    <script src="{% static 'assets/js/ajax-contact.js' %}"></script>
+    
+    <!--====== Isotope js ======-->
+    <script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+    
+    <!--====== Scrolling Nav js ======-->
+    <script src="{% static 'assets/js/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'assets/js/scrolling-nav.js' %}"></script>
+    
+    <!--====== Main js ======-->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+    
+</body>
+<script>
+
+    //===== Back to top
+
+    // Show or hide the sticky footer button
+    $(window).on('scroll', function(event) {
+        if($(this).scrollTop() > 20){
+            $('.back-to-top').fadeIn(200)
+        } else{
+            $('.back-to-top').fadeOut(200)
+        }
+    });
+
+
+    //Animate the scroll to yop
+    $('.back-to-top').on('click', function(event) {
+        event.preventDefault();
+
+        $('html, body').animate({
+            scrollTop: 0,
+        }, 1500);
+    });
+
+
+    //=====
+</script>
+</html>

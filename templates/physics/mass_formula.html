@@ -1,0 +1,480 @@
+{%extends 'physics/base.html' %}
+{% load static %}
+{% block title%}Mass Formula{% endblock %}
+
+{% block script %}
+<!-- <script type="text/javascript" src="{% static "js/physics/mass.js" %}"></script> -->
+<script type="text/javascript" src="{% static "js/physics/mass.min.js" %}"></script>
+<script type="text/javascript" src="{% static "js/convert.js" %}"></script>
+{% endblock %}
+{% block physics_body%}
+<div class="container-fluid">
+    <h2 align="center" style="font-family: 'Abhaya Libre';font-size: 36px;">What is Mass?</h2>
+    <p>Mass is both a property of a physical body and a measure of its resistance to acceleration (a change in its state
+        of motion) when a net force is applied. An object's mass also determines the strength of its gravitational
+        attraction to other bodies. <br>The basic <strong>SI unit of mass is the kilogram (kg)</strong>. In physics,
+        mass is not the same
+        as weight, even though mass is often determined by measuring the object's weight using a spring scale, rather
+        than balance scale comparing it directly with known masses. An object on the Moon would weigh less than it does
+        on Earth because of the lower gravity, but it would still have the same mass. This is because weight is a force,
+        while mass is the property that (along with gravity) determines the strength of this force.
+    </p>
+    <!-- <p><strong>Standard S.I Unit only </strong></p> -->
+        <div class="row">
+            <div class="col">
+                <button style="margin:0em 1em 1em 1em;color: black;" class="btn btn-outline-warning"
+                    type="submit" data-toggle="modal" data-target="#weight">Weight Conversion</button>
+                <button style="margin:0em 1em 1em 1em;color: black;" class="btn btn-outline-warning" type="submit"
+                    data-toggle="modal" data-target="#force">Force Conversion</button>
+                <button style="margin:0em 1em 1em 1em;color: black;" class="btn btn-outline-warning" type="submit"
+                    data-toggle="modal" data-target="#volume">Volume Conversion</button>
+            </div>
+            <div class="col-md-auto">
+                <button style="margin:0em 1em 1em 1em;color: black;" class="btn btn-outline-warning"
+                    type="submit" data-toggle="modal" data-target="#density">Density Conversion</button>
+            </div>
+            <div class="col col-lg-2">
+                <button style="margin:0em 3em 1em 1em;color: black;" class="btn btn-outline-warning" type="submit"
+                    data-toggle="modal" data-target="#acceleration">Acceleration Conversion</button>
+            </div>
+        </div>
+    <hr>
+    <p>
+        The mass formula is given as :
+       <strong>Mass = ρ × v</strong><br>
+        Where,
+        <strong>ρ = Density,</strong>
+        <strong>v = Volume</strong>
+        <button style="margin:0em 0em 0em 1em;color: black;" class="btn btn-outline-warning" type="submit"
+            data-toggle="modal" data-target="#densityModal">Density</button>
+        <hr>
+    </p>
+    
+    <p>
+        The weight mass formula is given as :
+        <strong>m = w / g</strong>
+        <br>Where,
+        <strong>w= weight, </strong>
+        <strong>m = mass, </strong>
+        <strong>g = gravity</strong>
+        <button style="margin:0em 0em 0em 1em;color: black;" class="btn btn-outline-warning" type="submit"
+            data-toggle="modal" data-target="#massModal">Mass</button><br>
+        <hr>
+    </p>
+    <p>
+        The Force formula is also given as :
+        <strong>F = m / a</strong>
+        <br>Where,
+        <strong>F= Force, </strong>
+        <strong>m = mass, </strong>
+        <strong>a = acceleration due to gravity</strong>
+        <button style="margin:0em 0em 0em 1em;color: black;" class="btn btn-outline-warning" type="submit"
+            data-toggle="modal" data-target="#forceModal">Force</button>
+    </p>
+</div>
+
+    <div class="modal fade" id="densityModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5  class="modal-title" id="exampleModalLabel" style="font-family: 'Abhaya Libre';font-size: 28px;">
+                        Density Formula</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p style="font-size: 12px;color: red;">Standard S.I Unit only (Any of the two input are required)</p>
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Mass</label>
+                            <input type="text" class="form-control" id="recipient-mass" placeholder="Enter Mass"
+                                onkeypress="return onlyNumberKey1(event)" />
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Volume</label>
+                            <input type="text" class="form-control" id="recipient-volume" placeholder="Enter Volume"
+                                onkeypress="return onlyNumberKey1(event)" />
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Density</label>
+                            <input type="text" class="form-control" id="recipient-density" placeholder="Enter Density"
+                                onkeypress="return onlyNumberKey1(event)" />
+                        </div>
+                    </form>
+                    <p id="error_msg1" style="font-size: 12px;color: red;"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="density_caluclate()">Calculate</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="massModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel" style="font-family: 'Abhaya Libre';font-size: 28px;">
+                        Mass Formula</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p style="font-size: 12px;color: red;">Standard S.I Unit only (Any of the two input are required)
+                    </p>
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Mass</label>
+                            <input type="text" class="form-control" id="recipient-mass1" placeholder="Enter Mass"
+                                onkeypress="return onlyNumberKey2(event)" />
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Weight</label>
+                            <input type="text" class="form-control" id="recipient-weight" placeholder="Enter Weight"
+                                onkeypress="return onlyNumberKey2(event)" />
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Gravity</label>
+                            <input type="text" class="form-control" id="recipient-gravity" placeholder="Enter gravitational constant"
+                                onkeypress="return onlyNumberKey2(event)" />
+                        </div>
+                    </form>
+                    <p id="error_msg2" style="font-size: 12px;color: red;"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="mass_caluclate()">Calculate</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="forceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel" style="font-family: 'Abhaya Libre';font-size: 28px;">
+                        Force Formula</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p style="font-size: 12px;color: red;">Standard S.I Unit only (Any of the two input are required)
+                    </p>
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Mass</label>
+                            <input type="text" class="form-control" id="recipient-mass2" placeholder="Enter Mass"
+                                onkeypress="return onlyNumberKey3(event)" />
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Acceleration</label>
+                            <input type="text" class="form-control" id="recipient-acceleration"
+                                placeholder="Enter Acceleration" onkeypress="return onlyNumberKey3(event)" />
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Force</label>
+                            <input type="text" class="form-control" id="recipient-force"
+                                placeholder="Enter Force" onkeypress="return onlyNumberKey3(event)" />
+                        </div>
+                    </form>
+                    <p id="error_msg3" style="font-size: 12px;color: red;"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="force_caluclate()">Calculate</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="weight" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle" style="font-family: 'Abhaya Libre';font-size: 28px;">
+                        Weight</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12 unit">
+                            <label for="quantity">Quantity :</label>
+                            <input type="text" class="form-control" id="quantitywt" placeholder="Enter Weight"
+                                onkeypress="return onlyNumberKey4(event)"/>
+                            <p id="error_msg4" style="font-size: 12px;color: red;"></p>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="units">From :</label>
+                            <select id="fromweight" value="units" class="UnitInput form-control">
+                                <option value="gm">Gram</option>
+                                <option value="mg">Milligram</option>
+                                <option value="kg">Kilogram</option>
+                                <option value="tn">Metric Tons</option>
+                                <option value="oc">Ounce</option>
+                                <option value="lb">Pound</option>
+                                <option value="qn">Quintal</option>
+                            </select>
+                            <p id="error_msg5" style="font-size: 12px;color: red;"></p>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="units">To :</label>
+                            <select id="toweight" value="units" class="UnitInput form-control">
+                                <option value="gm">Gram</option>
+                                <option value="mg">Milligram</option>
+                                <option value="kg">Kilogram</option>
+                                <option value="tn">Metric Tons</option>
+                                <option value="oc">Ounce</option>
+                                <option value="lb">Pound</option>
+                                <option value="qn">Quintal</option>
+                            </select>
+                            <p id="error_msg6" style="font-size: 12px;color: red;"></p>
+                        </div>
+                    </div>
+                    <p id="success_msg2" style="font-weight: 500;font-size: 14px;color: rgb(31, 112, 7);"></p>
+                    
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning swap" title="swap" onclick="swap_weight()">Swap</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" title="close">Close</button>
+                    <button type="button" class="btn btn-primary" title="convert" onclick="weightConversion()">Convert</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="density" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle" style="font-family: 'Abhaya Libre';font-size: 28px;">
+                        Density</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12 unit">
+                            <label for="quantity">Quantity :</label>
+                            <input type="text" class="form-control" id="quantityDensity" placeholder="Enter Density"
+                                onkeypress="return onlyNumberKey4(event)" />
+                            <p id="error_msg7" style="font-size: 12px;color: red;"></p>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="units">From :</label>
+                            <select id="fromdensity" value="units" class="UnitInput form-control">
+                                <option value="gm/cm³">gm/cm³</option>
+                                <option value="gm/liter">gm/liter</option>
+                                <option value="gm/m³">gm/m³</option>
+                                <option value="kg/cm³">kg/cm³</option>
+                                <option value="kg/liter">kg/liter</option>
+                                <option value="kg/m³">kg/m³</option>
+                                <option value="pounds/foot³">pounds/foot³</option>
+                                <option value="pounds/inch³">pounds/inch³</option>
+                            </select>
+                            <p id="error_msg8" style="font-size: 12px;color: red;"></p>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="units">To :</label>
+                            <select id="todensity" value="units" class="UnitInput form-control">
+                                <option value="gm/cm³">gm/cm³</option>
+                                <option value="gm/liter">gm/liter</option>
+                                <option value="gm/m³">gm/m³</option>
+                                <option value="kg/cm³">kg/cm³</option>
+                                <option value="kg/liter">kg/liter</option>
+                                <option value="kg/m³">kg/m³</option>
+                                <option value="pounds/foot³">pounds/foot³</option>
+                                <option value="pounds/inch³">pounds/inch³</option>
+                            </select>
+                            <p id="error_msg9" style="font-size: 12px;color: red;"></p>
+                        </div>
+                    </div>
+                    <p id="success_msg3" style="font-weight: 500;font-size: 14px;color: rgb(31, 112, 7);"></p>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning swap" title="swap" onclick="swap_density()">Swap</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" title="close">Close</button>
+                    <button type="button" class="btn btn-primary" title="convert" onclick="densityConversion()">Convert</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="force" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle" style="font-family: 'Abhaya Libre';font-size: 28px;">
+                        Force</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12 unit">
+                            <label for="quantity">Quantity :</label>
+                            <input type="text" class="form-control" id="quantityForce" placeholder="Enter Force"
+                                onkeypress="return onlyNumberKey5(event)" />
+                            <p id="error_msg10" style="font-size: 12px;color: red;"></p>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="units">From :</label>
+                            <select id="fromForce" value="units" class="UnitInput form-control">
+                                <option value="n">Newton[N]</option>
+                                <option value="kn">Kilo Newton[kN]</option>
+                                <option value="gf">gram-force[gf]</option>
+                                <option value="kgf">Kilogram-force[kgf]</option>
+                                <option value="dyn">dyne[dyn]</option>
+                                <option value="lbf">pound-force[lbf]</option>
+                            </select>
+                            <p id="error_msg11" style="font-size: 12px;color: red;"></p>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="units">To :</label>
+                            <select id="toForce" value="units" class="UnitInput form-control">
+                                <option value="n">Newton[N]</option>
+                                <option value="kn">Kilo Newton[kN]</option>
+                                <option value="gf">gram-force[gf]</option>
+                                <option value="kgf">Kilogram-force[kgf]</option>
+                                <option value="dyn">dyne[dyn]</option>
+                                <option value="lbf">pound-force[lbf]</option>
+                            </select>
+                            <p id="error_msg12" style="font-size: 12px;color: red;"></p>
+                        </div>
+                    </div>
+                    <p id="success_msg4" style="font-weight: 500;font-size: 14px;color: rgb(31, 112, 7);"></p>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning swap" title="swap"
+                        onclick="swap_force()">Swap</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" title="close">Close</button>
+                    <button type="button" class="btn btn-primary" title="convert"
+                        onclick="forceConversion()">Convert</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="acceleration" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle" style="font-family: 'Abhaya Libre';font-size: 28px;">
+                        Acceleration</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12 unit">
+                            <label for="quantity">Quantity :</label>
+                            <input type="text" class="form-control" id="quantityacceleration" placeholder="Enter Acceleration" onkeypress="return onlyNumberKey6(event)" />
+                            <p id="error_msg13" style="font-size: 12px;color: red;"></p>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="units">From :</label>
+                            <select id="fromAcceleration" value="units" class="UnitInput form-control">
+                                <option value="m/s²">m/s²</option>
+                                <option value="cm/s²">cm/s²</option>
+                                <option value="ft/s²">ft/s²</option>
+                                <option value="km/h²">km/h²</option>
+                            </select>
+                            <p id="error_msg14" style="font-size: 12px;color: red;"></p>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="units">To :</label>
+                            <select id="toAcceleration" value="units" class="UnitInput form-control">
+                                <option value="m/s²">m/s²</option>
+                                <option value="cm/s²">cm/s²</option>
+                                <option value="ft/s²">ft/s²</option>
+                                <option value="km/h²">km/h²</option>
+                            </select>
+                            <p id="error_msg15" style="font-size: 12px;color: red;"></p>
+                        </div>
+                    </div>
+                    <p id="success_msg5" style="font-weight: 500;font-size: 14px;color: rgb(31, 112, 7);"></p>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning swap" title="swap" onclick="swap_acceleration()">Swap</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" title="close">Close</button>
+                    <button type="button" class="btn btn-primary" title="convert"
+                        onclick="accelerationConversion()">Convert</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="volume" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle" style="font-family: 'Abhaya Libre';font-size: 28px;">
+                        Volume</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12 unit">
+                            <label for="quantity">Quantity :</label>
+                            <input type="text" class="form-control" id="quantityvolume"
+                                placeholder="Enter Volume" onkeypress="return onlyNumberKey7(event)" />
+                            <p id="error_msg16" style="font-size: 12px;color: red;"></p>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="units">From :</label>
+                            <select id="fromVolume" value="units" class="UnitInput form-control">
+                                <option value="m³">m³</option>
+                                <option value="cm³">cm³</option>
+                                <option value="lt">liter</option>
+                                <option value="kl">kiloliter</option>
+                                <option value="ml">milliliter</option>
+                                <option value="g">gallon[UK]</option>
+                                <option value="in³">cubic inch</option>
+                                <option value="bl">Barrel[UK]</option>
+                            </select>
+                            <p id="error_msg17" style="font-size: 12px;color: red;"></p>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="units">To :</label>
+                            <select id="toVolume" value="units" class="UnitInput form-control">
+                                <option value="m³">m³</option>
+                                <option value="cm³">cm³</option>
+                                <option value="lt">liter</option>
+                                <option value="kl">kiloliter</option>
+                                <option value="ml">milliliter</option>
+                                <option value="g">gallon[UK]</option>
+                                <option value="in³">cubic inch</option>
+                                <option value="bl">Barrel[UK]</option>
+                            </select>
+                            <p id="error_msg18" style="font-size: 12px;color: red;"></p>
+                        </div>
+                    </div>
+                    <p id="success_msg6" style="font-weight: 500;font-size: 14px;color: rgb(31, 112, 7);"></p>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning swap" title="swap"
+                        onclick="swap_volume()">Swap</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" title="close">Close</button>
+                    <button type="button" class="btn btn-primary" title="convert"
+                        onclick="volumeConversion()">Convert</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+{% endblock %}

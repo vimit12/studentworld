@@ -1,0 +1,61 @@
+{%extends 'blog/index.html' %}
+{% load crispy_forms_tags %}
+
+{%block content%}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'blog-home' %}">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Sign Up</li>
+    </ol>
+</nav>
+<!-- 
+    <div class="container">
+        <div class="row">
+            <div class="col-6"></div>
+            <div class="col-6 signup">
+                {% if sent %}
+                    <h4 style="font-family: 'DM Serif Text';font-size: 30px;color: darkolivegreen;">Sign Up complete
+                    <div id="div1" class="fa"></div>
+                    </h4>
+                {% else %}
+                    <h4 style="font-family: 'Caveat';font-size: 36px;color:rgb(3, 3, 3);">Sign Up Form</h4>
+                    <form action="" method="POST">
+                        {{form.as_p}}
+                        {%csrf_token%}
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-4"></div>
+                                <div class="col-sm-4">
+                                    <input type="submit" class="btn btn-info" value="Submit">
+                                </div>
+                                <div class="col-sm-4"></div>
+                            </div>
+                        </div>
+                    </form>
+                {%endif%}
+                
+            </div>
+        </div>
+    </div> -->
+<div class="content">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-">Join Today</legend>
+            {{ form|crispy }}
+        </fieldset>
+        <div class='form-group'>
+            <input type="submit" class="btn btn-info" value="Submit">
+        </div>
+    </form>
+    <div class="border-top pt-3">
+        <small class="text-muted">Already Have An Account? <a class="ml-2" href="{% url 'login'%}">Sign In</a></small>
+    </div>
+    
+</div>
+
+{%endblock%}
+
+
+{% block sidebar %}
+{%endblock%}

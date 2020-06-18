@@ -1,0 +1,77 @@
+table.tab1 {
+    border-style: none;
+}
+
+td.type1 {
+    background-color: yellow;
+}
+
+td.type2 {
+    background-color: Green;
+    color: white;
+}
+
+td.type3 {
+    background-color: rgb(236, 216, 248);
+}
+
+td.type4 {
+    background-color: red;
+    color: white;
+}
+
+td.type5 {
+    background-color: orange;
+}
+
+td.type6 {
+    background-color: purple;
+    color: white;
+}
+
+td.type7 {
+    background-color: blue;
+    color: white;
+}
+
+td.type8 {
+    background-color: #fa3388;
+    color: white;
+}
+
+td.type9 {
+    background-color: lightgreen;
+}
+
+td.type10 {
+    background-color: pink;
+}
+
+td.stype1 {
+    border-bottom-style: none;
+    border-top-style: none;
+}
+
+td.stype2 {
+    border-bottom-style: none;
+    border-top-style: none;
+    border-left-style: none;
+}
+
+div#detailed {
+    background-color: #cbb8f8;
+    display: block;
+    /* margin-left: 15%; */
+    margin: 1em 8em 1em 8em;
+    border-style: solid;
+    border-width: 1px;
+}
+.periodic:hover {
+    cursor: pointer;
+}
+body{
+    background-image: url("https://cdn.pixabay.com/photo/2019/01/29/16/51/periodic-system-3962844_1280.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

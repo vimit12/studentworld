@@ -1,0 +1,41 @@
+{% load blog %}
+
+<!-- <div class="paginator">
+    <span>
+        {%if page.has_previous%}
+            <button type="button" class="btn btn-light">
+            <a href="?page={{page.previous_page_number}}">Previous</a></button>
+        {%endif%}
+    </span>
+    <span class='current'>page {{page.number}} of {{page.paginator.num_pages}}</span>
+    <span>{%if page.has_next%}
+        <a href="?page={{page.next_page_number}}">Next</a>
+        {%endif%}
+    </span>
+</div> -->
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-end">
+        {%if page.has_previous%}
+            <li class="page-item">
+                <a class="page-link" tabindex="-1" aria-disabled="true" href="?page={{page.previous_page_number}}">Previous</a>
+            </li>
+            {% else %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                </li>
+            {%endif%}
+        
+        {% with 2 as pg %}
+            {% for n in pg|get_range %}
+            <li> <a class="page-link" href="?page={{n}}">{{n}}</a> </li>
+            {% endfor %}
+        {% endwith %}
+        <!-- <li><span class='page-link'>Page {{page.number}} of {{page.paginator.num_pages}}</span></li> -->
+        <li class="page-item">
+            {%if page.has_next%}
+            <a class="page-link" href="?page={{page.next_page_number}}">Next</a>
+            {%endif%}
+        </li>
+    </ul>
+</nav>

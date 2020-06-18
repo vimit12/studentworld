@@ -1,0 +1,411 @@
+{%extends 'physics/base.html' %}
+{% load static %}
+{% block title%}Kinematics Formula{% endblock %}
+
+{% block script %}
+<!-- <script type="text/javascript" src="{% static "js/physics/mass.js" %}"></script> -->
+<script type="text/javascript" src="{% static "js/physics/mass.min.js" %}"></script>
+<!-- <script type="text/javascript" src="{% static "js/physics/kinematic.js" %}"></script> -->
+<script type="text/javascript" src="{% static "js/physics/kinematic.min.js" %}"></script>
+<script type="text/javascript" src="{% static "js/convert.js" %}"></script>
+{% endblock %}
+
+{% block physics_body%}
+<div class="container-fluid">
+    <h2 align="center" style="font-family: 'Abhaya Libre';font-size: 36px;">What is Kinematics?</h2>
+    <p>Kinematics, branch of physics and a subdivision of classical mechanics concerned with the geometrically possible
+        motion of a body or system of bodies without consideration of the forces involved (i.e., causes and effects of
+        the motions). <br><br>
+        Kinematics aims to provide a description of the spatial position of bodies or systems of material particles, the
+        rate at which the particles are moving (velocity), and the rate at which their velocity is changing
+        (acceleration). When the causative forces are disregarded, motion descriptions are possible only for particles
+        having constrained motion—i.e., moving on determinate paths. In unconstrained, or free, motion, the forces
+        determine the shape of the path
+        <br><br>
+        For a particle moving on a straight path, a list of positions and corresponding times would constitute a
+        suitable scheme for describing the motion of the particle. A continuous description would require a mathematical
+        formula expressing position in terms of time.<br><br>
+        When a particle moves on a curved path, a description of its position becomes more complicated and requires two
+        or three dimensions. In such cases continuous descriptions in the form of a single graph or mathematical formula
+        are not feasible. The position of a particle moving on a circle, for example, can be described by a rotating
+        radius of the circle, like the spoke of a wheel with one end fixed at the centre of the circle and the other end
+        attached to the particle. The rotating radius is known as a position vector for the particle, and, if the angle
+        between it and a fixed radius is known as a function of time, the magnitude of the velocity and acceleration of
+        the particle can be calculated. Velocity and acceleration, however, have direction as well as magnitude;
+        velocity is always tangent to the path, while acceleration has two components, one tangent to the path and the
+        other perpendicular to the tangent.<br><br>
+    </p>
+
+    <!-- <p><strong>Standard S.I Unit only </strong></p> -->
+    <div class="row">
+        <div class="col-sm-4">
+            <button style="margin:0em 1em 1em 1em;color: black;" class="btn btn-outline-warning" type="submit"
+                data-toggle="modal" data-target="#velocity">Velocity/Speed Conversion</button>
+        </div>
+        <div class="col-sm-4">
+            <button style="margin:0em 1em 1em 1em;color: black;" class="btn btn-outline-warning" type="submit"
+                data-toggle="modal" data-target="#length1">Displacement Conversion</button>
+        </div>
+        <div class="col-sm-4">
+            <button style="margin:0em 3em 1em 1em;color: black;" class="btn btn-outline-warning" type="submit"
+                data-toggle="modal" data-target="#acceleration1">Acceleration Conversion</button>
+        </div>
+    </div>
+    Formulas given as :<br>
+    <hr>
+    <p>
+        <strong> v= u + at </strong><br>
+        Where,
+        <strong>v = Final Velocity,</strong>
+        <strong>u = Intial Velocity, </strong>
+        <strong>a = Acceleration due to gravity, </strong>
+        <strong>t = Time</strong>
+        <button style="margin:0em 0em 0em 1em;color: black;" class="btn btn-outline-warning" type="submit"
+            data-toggle="modal" data-target="#formula1Modal">v = u + at</button>
+        <hr>
+    </p>
+
+    <p>
+        <strong>v²=u²+2as</strong>
+        <br>Where,
+        <strong>v = Final Velocity,</strong>
+        <strong>u = Intial Velocity, </strong>
+        <strong>a = Acceleration due to gravity, </strong>
+        <strong>s = Displacement </strong>
+        <button style="margin:0em 0em 0em 1em;color: black;" class="btn btn-outline-warning" type="submit"
+            data-toggle="modal" data-target="#formula2Modal">v² = u² + 2as</button><br>
+        <hr>
+    </p>
+    <p>
+        <strong>s = ut + 1/2(at²)</strong>
+        <br>Where,
+        <strong>u = Intial Velocity, </strong>
+        <strong>a = Acceleration due to gravity, </strong>
+        <strong>t = Time, </strong>
+        <strong>s = Displacement </strong>
+        <button style="margin:0em 0em 0em 1em;color: black;" class="btn btn-outline-warning" type="submit"
+            data-toggle="modal" data-target="#formula3Modal">s = ut + 1/2(at²)</button>
+    </p>
+</div>
+
+<div class="modal fade" id="formula1Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="font-family: 'Abhaya Libre';font-size: 28px;">
+                    v= u + at</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p style="font-size: 12px;color: red;">Standard S.I Unit only (Any of the three input are required)</p>
+                <form>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Final Velocity</label>
+                        <input type="text" class="form-control" id="recipient-final" placeholder="Enter Final Velocity"
+                            onkeypress="return onlyNumberKey1(event)" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Initial Velocity</label>
+                        <input type="text" class="form-control" id="recipient-intial"
+                            placeholder="Enter Initial Velocity" onkeypress="return onlyNumberKey1(event)" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Accelerations</label>
+                        <input type="text" class="form-control" id="recipient-acceleration" placeholder="Enter Accelerations"
+                            onkeypress="return onlyNumberKey1(event)" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Time</label>
+                        <input type="text" class="form-control" id="recipient-time" placeholder="Enter Time"
+                            onkeypress="return onlyNumberKey1(event)" />
+                    </div>
+                </form>
+                <p id="error_msg10" style="font-size: 12px;color: red;"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="formula1_caluclate()">Calculate</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="formula2Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="font-family: 'Abhaya Libre';font-size: 28px;">
+                    v² = u² + 2as</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p style="font-size: 12px;color: red;">Standard S.I Unit only (Any of the three input are required)</p>
+                <form>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Final Velocity</label>
+                        <input type="text" class="form-control" id="recipient-final1" placeholder="Enter Final Velocity"
+                            onkeypress="return onlyNumberKey2(event)" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Initial Velocity</label>
+                        <input type="text" class="form-control" id="recipient-intial1"
+                            placeholder="Enter Initial Velocity" onkeypress="return onlyNumberKey2(event)" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Accelerations</label>
+                        <input type="text" class="form-control" id="recipient-acceleration1"
+                            placeholder="Enter Accelerations" onkeypress="return onlyNumberKey2(event)" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Displacement</label>
+                        <input type="text" class="form-control" id="recipient-displacement"
+                            placeholder="Enter Displacement" onkeypress="return onlyNumberKey2(event)" />
+                    </div>
+                </form>
+                <p id="error_msg20" style="font-size: 12px;color: red;"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="formula2_caluclate()">Calculate</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="formula3Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="font-family: 'Abhaya Libre';font-size: 28px;">
+                    s = ut + 1/2(at²)</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p style="font-size: 12px;color: red;">Standard S.I Unit only (Any of the three input are required)</p>
+                <form>
+                    
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Initial Velocity</label>
+                        <input type="text" class="form-control" id="intialvelocity"
+                            placeholder="Enter Initial Velocity" onkeypress="return onlyNumberKey3(event)" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Accelerations</label>
+                        <input type="text" class="form-control" id="acceleration"
+                            placeholder="Enter Accelerations" onkeypress="return onlyNumberKey3(event)" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Displacement</label>
+                        <input type="text" class="form-control" id="displacement"
+                            placeholder="Enter Displacement" onkeypress="return onlyNumberKey3(event)" />
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Time</label>
+                        <input type="text" class="form-control" id="time" placeholder="Enter Time"
+                            onkeypress="return onlyNumberKey3(event)" />
+                    </div>
+
+                </form>
+                <p id="error_msg30" style="font-size: 12px;color: red;"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="formula3_caluclate()">Calculate</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="length1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle" style="font-family: 'Amita';font-size: 22px;">Length
+                </h5>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12 unit">
+                        <label for="quantity">Quantity :</label>
+                        <input type="text" class="form-control" id="quantity"
+                            onkeypress="return onlyNumberKey4(event)" />
+                        <p id="error_msg1" style="font-size: 12px;color: red;"></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="units">From :</label>
+                        <select id="fromunits" value="units" class="UnitInput form-control">
+                            <option value="cm">Centimetre</option>
+                            <option value="ft">Feet</option>
+                            <option value="in">Inch</option>
+                            <option value="mt">Metre</option>
+                            <option value="km">Kilometre</option>
+                            <option value="ml">Miles</option>
+                            <option value="nl">Nauticle Miles</option>
+                            <option value="yd">Yard</option>
+                            <option value="mm">Millimetre</option>
+                            <option value="nm">Nanometre</option>
+                            <option value="micron">Micrometre</option>
+                        </select>
+                        <p id="error_msg2" style="font-size: 12px;color: red;"></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="units">To :</label>
+                        <select id="tounits" value="units" class="UnitInput form-control">
+                            <option value="cm">Centimetre</option>
+                            <option value="ft">Feet</option>
+                            <option value="in">Inch</option>
+                            <option value="mt">Metre</option>
+                            <option value="km">Kilometre</option>
+                            <option value="ml">Miles</option>
+                            <option value="nl">Nauticle Miles</option>
+                            <option value="yd">Yard</option>
+                            <option value="mm">Millimetre</option>
+                            <option value="nm">Nanometre</option>
+                            <option value="micron">Micrometre</option>
+                        </select>
+                        <p id="error_msg3" style="font-size: 12px;color: red;"></p>
+                    </div>
+                </div>
+                <p id="success_msg1" style="font-size: 16px;color: rgb(9, 134, 36);font-weight: 500;"></p>
+            </div>
+
+            <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" title="swap" onclick="swap_length()">Swap</button>
+                    <button type="button" class="btn btn-dark" data-dismiss="modal" title="close">Close</button>
+                    <button type="button" class="btn btn-primary" title="evaluate" onclick="lengthConversion()">Convert</button>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="velocity" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle" style="font-family: 'Amita';font-size: 22px;">Velocity
+                </h5>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12 unit">
+                        <label for="quantity">Quantity :</label>
+                        <input type="text" class="form-control" id="quantityVelocity"
+                            onkeypress="return NumberOnlyKey(event)" />
+                        <p id="error_msg23" style="font-size: 12px;color: red;"></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="units">From :</label>
+                        <select id="fromvelocity" value="units" class="UnitInput form-control">
+                            <option value="cm/s">cm/s</option>
+                            <option value="m/s">m/s</option>
+                            <option value="km/hr">km/hr</option>
+                            <option value="km/min">km/min</option>
+                            <option value="km/s">km/s</option>
+                            <option value="ft/hr">ft/hr</option>
+                            <option value="ft/s">ft/s</option>
+                            <option value="mch">Mach</option>
+                            <option value="kn">Knot[UK]</option>
+                        </select>
+                        <p id="error_msg24" style="font-size: 12px;color: red;"></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="units">To :</label>
+                        <select id="tovelocity" value="units" class="UnitInput form-control">
+                            <option value="cm/s">cm/s</option>
+                            <option value="m/s">m/s</option>
+                            <option value="km/hr">km/hr</option>
+                            <option value="km/min">km/min</option>
+                            <option value="km/s">km/s</option>
+                            <option value="ft/hr">ft/hr</option>
+                            <option value="ft/s">ft/s</option>
+                            <option value="mch">Mach</option>
+                            <option value="kn">Knot[UK]</option>
+                        </select>
+                        <p id="error_msg25" style="font-size: 12px;color: red;"></p>
+                    </div>
+                </div>
+                <p id="success_msg2" style="font-size: 16px;color: rgb(9, 134, 36);font-weight: 500;"></p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" title="swap" onclick="swap_velocity()">Swap</button>
+                <button type="button" class="btn btn-dark" data-dismiss="modal" title="close">Close</button>
+                <button type="button" class="btn btn-primary" title="evaluate"
+                    onclick="velocityConversion()">Convert</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="acceleration1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle" style="font-family: 'Abhaya Libre';font-size: 28px;">
+                    Acceleration</h5>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12 unit">
+                        <label for="quantity">Quantity :</label>
+                        <input type="text" class="form-control" id="quantityacceleration"
+                            placeholder="Enter Acceleration" onkeypress="return onlyNumberKey6(event)" />
+                        <p id="error_msg13" style="font-size: 12px;color: red;"></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="units">From :</label>
+                        <select id="fromAcceleration" value="units" class="UnitInput form-control">
+                            <option value="m/s²">m/s²</option>
+                            <option value="cm/s²">cm/s²</option>
+                            <option value="ft/s²">ft/s²</option>
+                            <option value="km/h²">km/h²</option>
+                        </select>
+                        <p id="error_msg14" style="font-size: 12px;color: red;"></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="units">To :</label>
+                        <select id="toAcceleration" value="units" class="UnitInput form-control">
+                            <option value="m/s²">m/s²</option>
+                            <option value="cm/s²">cm/s²</option>
+                            <option value="ft/s²">ft/s²</option>
+                            <option value="km/h²">km/h²</option>
+                        </select>
+                        <p id="error_msg15" style="font-size: 12px;color: red;"></p>
+                    </div>
+                </div>
+                <p id="success_msg5" style="font-weight: 500;font-size: 14px;color: rgb(31, 112, 7);"></p>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning swap" title="swap"
+                    onclick="swap_acceleration()">Swap</button>
+                <button type="button" class="btn btn-dark" data-dismiss="modal" title="close">Close</button>
+                <button type="button" class="btn btn-primary" title="convert"
+                    onclick="accelerationConversion()">Convert</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

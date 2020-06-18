@@ -1,0 +1,65 @@
+{%extends 'physics/base.html' %}
+
+{% block title%}Physics{% endblock %}
+
+{% block physics_body%}
+    <div class="jumbotron" style="background: rgb(31, 29, 29);">
+        {% block jumbo_block %}
+        <h1 class="display-4" style="font-family: 'Alex Brush';font-size: 66px;color: blanchedalmond;">We should convert our potential energy to kinetic energy!!</h1>
+            
+            <hr class="my-4" style="border-top: 1px solid rgb(247, 240, 240);">
+                <a class="btn btn-primary btn-lg show_more_tabs" role="button" style="color: wheat;">Learn more</a>
+                <a class="btn btn-success btn-lg" role="button" href="{% url 'solar-system' %}">Solar System</a>
+        
+        {% endblock %}
+    </div>
+    
+    <div id="tabs_show">
+        <div class="container">
+            <table class="table table-bordered table-hover table-responsive-sm">
+                <tbody>
+                    <tr>
+                        <th scope="row"><a class="btn btn-outline-info btn-lg" href="{% url 'mass-formula' %}" role="button">Mass Formula</a></th>
+                        <th scope="row"><a class="btn btn-outline-info btn-lg" href="{% url 'kinematic-formula' %}"
+                                role="button">Kinematics
+                                Formulas</a>
+                        </th>
+                        <th scope="row"><a class="btn btn-outline-info btn-lg" href="{% url 'escape-velocity' %}"
+                                role="button">Escape Velocity
+                                Formula</a></th>
+                        <th scope="row"><a class="btn btn-outline-info btn-lg" href="{% url 'ohms-law' %}"
+                                role="button">Ohms Law Formula</a>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row"><a class="btn btn-outline-info btn-lg" href="{% url 'energy-formula' %}"
+                                role="button">Energy Formula</a></th>
+                        <th scope="row"><a class="btn btn-outline-info btn-lg" href="{% url 'power' %}"
+                                role="button">Power
+                                Formula</a></th>
+                        <th scope="row"><a class="btn btn-outline-info btn-lg" href="{% url 'heat-transfer' %}"
+                                role="button">Heat Transfer</a>
+                        </th>
+                        <th scope="row"><a class="btn btn-outline-info btn-lg" href="{% url 'optics' %}"
+                                role="button">Optics</a>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row"><a class="btn btn-outline-info btn-lg" href="{% url 'buoyancy' %}"
+                                role="button">Buoyancy Formula</a>
+                        </th>
+                        <th scope="row"><a class="btn btn-outline-info btn-lg" href="{% url 'elastic' %}"
+                                role="button">Elastic & Inelastic</a></th>
+                        <th scope="row"><a class="btn btn-outline-info btn-lg" href="{% url 'electric-resistance' %}"
+                                role="button">Resistance Formula</a></th>
+                        <th scope="row"></th>
+                        
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+{% endblock %}
+

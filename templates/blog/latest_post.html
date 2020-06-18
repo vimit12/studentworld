@@ -1,0 +1,57 @@
+<style>
+    .list-type3 {
+        margin:0 auto;
+        width: 100%;
+
+    }
+
+    .list-type3 li,
+    .list-type3 a {
+        float: left;
+        height: 50%;
+        line-height: 35px;
+        position: relative;
+        font-size: 15px;
+        margin-bottom: 12px;
+        width: 90%;
+        /* font-family: 'Raleway', sans-serif; */
+        /* transition: background-color; */
+    }
+
+    .list-type3 a {
+        padding: 0 0 0 10px;
+        background: #ffebb9;
+        color: black;
+        border-radius: 2em;
+    }
+
+    
+
+    .list-type3 a:hover {
+        background: rgb(129, 2, 2);
+        color: whitesmoke;
+        border-radius: 4em;
+    }
+
+    .list-type3 a:hover:before {
+        border-color: transparent rebeccapurple transparent transparent;
+    }
+</style>
+
+<!-- <ul> 
+    {% for post in latest_post %}
+        <li><a href="{{post.get_absolute_url}}">{{post.title}}</a></li>
+    {% endfor %}
+</ul> -->
+<div class="row">
+    <div class="col-sm-12">
+        <div class="list-type3">
+            <ul>
+                {% for post in latest_post %}
+                <li class="list"><a class="latest" href="{{post.get_absolute_url}}">{{post.title}}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    
+</div>

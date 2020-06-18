@@ -1,0 +1,42 @@
+{%load static%}
+
+{% block header %}
+{% include "base.html" %}
+{% endblock %}
+
+{% block kids %}
+<style media="screen">
+    .jumbotron {
+        margin: 10em 0 0 5em;
+        padding: 2em;
+        /* background-image: url("{% static "image/jumb.gif" %}"); */
+        /* background-position: center;
+        /* background-repeat: no-repeat; */
+        /* background-size: cover; */
+        width: 80%;
+    }
+
+    
+</style>
+
+<div class="container">
+    <div class="jumbotron jumbotron-fluid">
+        
+        <a href="\alphabets" class="w3-button"><img src="{% static 'image/child.ico' %}" alt="">
+            <p>Alphabets</p>
+        </a>
+        <a href="\body" class="w3-button"><img src="{% static 'image/body.ico' %}" alt="">
+            <p>Body Parts</p>
+        </a>
+        <a href="\fruits" class="w3-button"><img src="{% static 'image/fruits.ico' %}" alt="">
+            <p>Fruits</p>
+        </a>
+        <a href="\animal" class="w3-button"><img src="{% static 'image/animal.ico' %}" alt="">
+            <p>Animals</p>
+        </a>
+        <a href="\vehicle" class="w3-button"><img src="{% static 'image/vehicle.ico' %}" alt="">
+            <p>Vehicles</p>
+        </a>
+    </div>
+</div>
+{% endblock %}

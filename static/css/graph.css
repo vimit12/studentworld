@@ -1,0 +1,55 @@
+body{
+    background-color: #fff2de;
+}
+#result{
+  width: 30em;
+  height: 3em;
+  font-size: 15px;
+  /* margin-top: 2em; */
+  margin-left: 1em;
+  /* background-color: #fff5bd; */
+  border: 1px;
+  /* border-style:outset; */
+}
+.form-control:focus{
+  border-radius: 20px;
+  outline: none;
+  transition: all 0.3s ease 0s;
+}
+.jumbotron{
+  margin-top: 7em;
+  background-color: #faccb6;
+}
+#error_html{
+  font-size: 14px;
+  color: red;
+  margin-top: 1em;;
+  margin-left: 1.5em;;
+}
+.example_d {
+  margin-top: 0.75em;
+  margin-left: 8em;
+  width: 9em;
+  height: 3em;
+  color: #20bf6b;
+  text-transform: uppercase;
+  background: #ffffff;
+  border: 1px solid #20bf6b;
+  border-radius: 6px;
+  display: inline-block;
+  transition: all 0.3s ease 0s;
+}
+.example_d:hover {
+color: #494949 !important;
+background-color: #aefcdc;
+border-radius: 50px;
+border-color: #494949; !important;
+transition: all 0.3s ease 0s;
+}
+.reset{
+  /* margin-left: 1em; */
+}
+.graph_plot{
+  margin-left: 20em;
+  /* padding-left: 50em; */
+}

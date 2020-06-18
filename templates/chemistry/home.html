@@ -1,0 +1,129 @@
+{%extends 'chemistry/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+        <title>{% block title%}Chemistry{% endblock %}</title>
+        <meta charset="UTF-8">
+        {% block link %}
+        
+        {% endblock %}
+
+         {% block script %}
+         {% endblock %}
+        
+</head>
+
+<body>
+        
+        <!-- content -->
+{% block chemistry_body%}
+
+    <div class="container">
+
+        <div class="row">
+
+                <div class="col">
+                        <div class="card mb-3 w3-border-dark-grey" style="max-width: 25rem;  ">
+                                <div class="row no-gutters">
+                                        <div class="col-md-4">
+                                                <img src="https://cdn.pixabay.com/photo/2012/04/02/13/57/chemical-reaction-24562_960_720.png"
+                                                        class="card-img" alt="...">
+                                        </div>
+                                        <div class="col-md-8">
+                                                <div class="card-body">
+                                                        <h5 class="card-title">Chemical Reactions and Equations</h5>
+                                                        <p class="card-text">A chemical reaction is a process that leads
+                                                                to the chemical
+                                                                transformation of one set of chemical substances to
+                                                                another.</p>
+                                                        <p class="card-text"><small class="text-muted"><a class=" btn-outline-danger" href="{% url 'chemical-reaction' %}">&#8475;ead More &raquo;..</a></small>
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+
+                <div class="col">
+                        <div class="card mb-3 w3-border-dark-grey " style="max-width: 25rem;  ">
+                                <div class="row no-gutters">
+                                        <div class="col-md-4">
+                                                <img src="https://dk-media.s3.amazonaws.com/media/1kltl/images/14542020/huge/7e74e9bc-f65e-497f-a19f-36ac5a56c047image3.jpeg"
+                                                        class="card-img" alt="...">
+                                        </div>
+                                        <div class="col-md-8">
+                                                <div class="card-body">
+                                                        <h5 class="card-title">Acid Bases & Salt</h5>
+                                                        <p class="card-text">An acid is a molecule or ion capable of
+                                                                donating a proton (hydrogen ion H+)
+                                                                 or, alternatively, capable of forming a covalent
+                                                                bond with an electron pair (a Lewis acid).</p>
+                                                        <p class="card-text"><small class="text-muted"><a
+                                                        class=" btn-outline-danger" href="{% url 'acid-base-salt' %}">&#8475;ead More &raquo;..</a></small>
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+
+
+                <div class="w-100"></div>
+
+
+                <div class="col">
+                        <div class="card mb-3 w3-border-dark-grey" style="max-width: 25rem;  ">
+                                <div class="row no-gutters">
+                                        <div class="col-md-4">
+                                                <img src="https://www.atlanticshopping.co.uk/images/20160513131611/f:photos/comparison-of-different-metals.jpg"
+                                                        class="card-img" alt="...">
+                                        </div>
+                                        <div class="col-md-8">
+                                                <div class="card-body">
+                                                        <h5 class="card-title">Metals & Non Metals</h5>
+                                                        <p class="card-text">A solid material which is typically hard,
+                                                                shiny, malleable, fusible, and ductile, with good
+                                                                electrical and thermal conductivity (e.g. iron, gold,
+                                                                silver,and alloys such as steel).</p>
+                                                        <p class="card-text"><small class="text-muted"><a
+                                                        class=" btn-outline-danger" href="{% url 'metal-non-metal' %}">&#8475;ead More &raquo;..</a></small>
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+
+                <div class="col">
+                        <div class="card mb-3 w3-border-dark-grey" style="max-width: 25rem;  ">
+                                <div class="row no-gutters">
+                                        <div class="col-md-4">
+                                                <img src="https://cdn.pixabay.com/photo/2019/08/23/16/50/carbon-4426054_1280.png"
+                                                        class="card-img" alt="...">
+                                        </div>
+                                        <div class="col-md-8">
+                                                <div class="card-body">
+                                                        <h5 class="card-title">Carbon and Its Compounds</h5>
+                                                        <p class="card-text">Carbon is a chemical element with the
+                                                                symbol C and atomic number 6. It is nonmetallic and
+                                                                tetravalent—making four electrons.</p>
+                                                        <p class="card-text"><small class="text-muted"><a
+                                                        class=" btn-outline-danger" href="{% url 'carbon' %}">&#8475;ead
+                                                        More &raquo;..</a></small>
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </div>
+        
+    </div>
+
+        {% endblock %}
+        
+</body>
+
+</html>
